@@ -16,8 +16,8 @@ class QuizService {
         })
     }
 
-    getRandomQuiz = () =>{
-        return this.api.get('/api/quiz/general');
+    getRandomQuiz = (type) =>{
+        return this.api.get(`/api/quiz/${type}`);
     };
 
     getSpecificQuiz = (type) => {
