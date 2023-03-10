@@ -7,8 +7,8 @@ function Quiz() {
     <div> 
     <h1>All quizes</h1>
       <Link to='/quiz/general'>General Quiz</Link>
-      <Link to={`/quiz/javscript`}>Javascritp Quiz</Link>
-      <Link to={`/quiz/html`}>HTML Quiz</Link>
+      <Link to='/quiz/javascript'>Javascritp Quiz</Link>
+      <Link to='/quiz/html'>HTML Quiz</Link>
     </div>
   )
 }

@@ -12,7 +12,7 @@ function QuizType() {
 
     const getQuiz = async () => {
         try {
-            const response = await quizService.getRandomQuiz();
+            const response = await quizService.getRandomQuiz(type);
             setQuiz(response.data);
             console.log(response.data)
         } catch (error) {
@@ -26,12 +26,15 @@ function QuizType() {
 
   return (
     <div>
-    <h1>QUIZ</h1>
         <h1>{type} Quiz</h1>
         {quiz.map((question) => {
             return (
                 <div key={question._id}>
                 <h2>{question.question}</h2>
+                {question.answers.map((answer, i) => {
+                    return <h4 key={i}>{answer}</h4>
+                })}
+
                 </div>
                 
             )
