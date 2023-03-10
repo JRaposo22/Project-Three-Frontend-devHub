@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Quiz from './pages/Quiz';
 import QuizType from './pages/QuizType';
+import Jobs from './pages/Jobs';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/login' element={<Login />}/>
         <Route path='/quiz/general' element={<QuizType/>} />
         <Route path='/quiz' element={<Quiz/>} />
+        <Route path='/jobs' element={<Jobs/>} />
         
       </Routes>
       

@@ -7,18 +7,20 @@ function Signup() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [adminPass, setAdminPass] = useState("");
 
     const handleUsername = (e) => setUsername(e.target.value);
     const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
+    const handleAdminPass = (e) => setAdminPass(e.target.value);
+
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, {username, email, password});
-            console.log(response.data);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, {username, email, password, adminPass});
             navigate('/login');
         } catch (error) {
             console.log(error);
@@ -31,7 +33,7 @@ function Signup() {
         <h1>Signup</h1>
 
         <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Name</label>
+            <label htmlFor="username">Username</label>
             <input type="text" user="username" id="username" value={username} onChange={handleUsername}/>
 
             <label htmlFor="email">Email</label>
@@ -39,6 +41,9 @@ function Signup() {
 
             <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" value={password} onChange={handlePassword}/>
+
+            <label htmlFor="adminPass">Admin Password</label>
+            <input type="adminPass" name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
 
             <button type="submit">Create account</button>
 
