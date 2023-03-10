@@ -21,7 +21,7 @@ function AuthWrapper(props) {
           `${import.meta.env.VITE_API_URL}/auth/verify`,
           {
             headers: {
-              Authorization: `Bearer ${storedToken}`,
+              Authorization: `Bearer ${storedToken.authToken}`,
             },
           }
         );
