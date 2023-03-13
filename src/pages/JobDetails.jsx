@@ -12,7 +12,7 @@ function JobDetails() {
         try {
             const response = await jobService.jobDetails(id);
             console.log(response.data)
-            setJob(response.data.job);~
+            setJob(response.data.job);
             setUser(response.data.user);
         } catch (error) {
             console.log(error);

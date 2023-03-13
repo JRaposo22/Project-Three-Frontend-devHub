@@ -11,6 +11,10 @@ import Jobs from './pages/Jobs';
 import AddJob from './pages/AddJob';
 import EditJob from './pages/EditJob';
 import JobDetails from './pages/JobDetails';
+import Hints from './pages/Hints';
+import AddHint from './pages/AddHint';
+import EditHint from './pages/EditHint';
+import HintDetails from './pages/HintDetails';
 
 function App() {
 
@@ -27,8 +31,10 @@ function App() {
         <Route path='/jobs/add' element={<AddJob/>} />
         <Route path='/jobs/edit/:id' element={<EditJob/>} />
         <Route path='/jobs/:id' element={<JobDetails/>} />
-
-        
+        <Route path='/hints' element={<Hints/>} />
+        <Route path='/hints/add' element={<AddHint/>} />
+        <Route path='/hints/edit/:id' element={<EditHint/>} />
+        <Route path='/hints/:id' element={<HintDetails/>} />        
       </Routes>
       
     </div>
