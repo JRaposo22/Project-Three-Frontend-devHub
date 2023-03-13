@@ -14,6 +14,7 @@ function GoogleSigIn() {
         auth.signOut();
     };
   return (
+    <>
     <button className="sign-in">
           <img style={{width: '200px'}}
             onClick={googleSignIn}
@@ -22,6 +23,8 @@ function GoogleSigIn() {
             type="button"
           />
         </button>
+        <button onClick={signOut}>Sign out</button>
+        </>
   )
 }
 

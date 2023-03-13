@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
+import { getAuth, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 
 function Login() {
@@ -21,7 +22,29 @@ function Login() {
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, {email, password});
             localStorage.setItem('authToken', response.data.authToken);
             authenticateUser();
-            console.log(response.data.authToken);
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            // ...
+            })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+  });
+
+  //FIREBASE UPDATE
+  updateProfile(auth.currentUser, {
+    displayName: response.data.foundUser.username, photoURL: "https://example.com/jane-q-user/profile.jpg"
+    }).then(() => {
+    // Profile updated!
+    // ...
+    }).catch((error) => {
+    // An error occurred
+    // ...
+    });
+
             navigate('/home');
         } catch (error) {
             console.log(error);

@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+
 
 
 function Signup() {
@@ -13,14 +16,35 @@ function Signup() {
     const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
     const handleAdminPass = (e) => setAdminPass(e.target.value);
+    
 
 
     const navigate = useNavigate();
+
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, {username, email, password, adminPass});
+
+            //FIREBASE REGISTER
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            // ...
+            })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+    // ..
+  });
+
+  
+          
+  
             navigate('/login');
         } catch (error) {
             console.log(error);
