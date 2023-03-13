@@ -12,10 +12,11 @@ function AuthWrapper(props) {
 
   const authenticateUser = async () => {
     // check for a token
-    const storedToken = localStorage.getItem('authToken');
+    const localToken = localStorage.getItem('authToken');
+    const storedToken = localToken.authToken;
 
     // if token exists
-    if (storedToken) {
+    if (localToken) {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL}/auth/verify`,
@@ -30,8 +31,7 @@ function AuthWrapper(props) {
         setUser(response.data);
         setLoading(false);
       } catch (error) {
-        console.log(error);
-        setLoggedIn(false);
+         setLoggedIn(false);
         setUser(null);
         setLoading(false);
       }
