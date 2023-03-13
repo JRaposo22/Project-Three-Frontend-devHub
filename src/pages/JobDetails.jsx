@@ -4,13 +4,16 @@ import jobService from '../services/job.service';
 
 function JobDetails() {
     const [job, setJob] = useState(null);
+    const [user, setUser] = useState(null)
 
     const { id } = useParams();
 
     const getJob = async () => {
         try {
             const response = await jobService.jobDetails(id);
-            setJob(response.data);
+            console.log(response.data)
+            setJob(response.data.job);~
+            setUser(response.data.user);
         } catch (error) {
             console.log(error);
         }
@@ -32,7 +35,7 @@ function JobDetails() {
 
             </>
         )}
-        {job && <Link to={`/jobs/edit/${job._id}`}>Edit job</Link>}
+        {job && user.admin == true && <Link to={`/jobs/edit/${job._id}`}>Edit job</Link>}
     </div>
     
   )

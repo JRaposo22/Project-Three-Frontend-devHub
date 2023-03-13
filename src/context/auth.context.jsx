@@ -12,17 +12,17 @@ function AuthWrapper(props) {
 
   const authenticateUser = async () => {
     // check for a token
-    const localToken = localStorage.getItem('authToken');
-    const storedToken = localToken.authToken;
+    const storedToken = localStorage.getItem('authToken');
+   
 
     // if token exists
-    if (localToken) {
+    if (storedToken) {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL}/auth/verify`,
           {
             headers: {
-              Authorization: `Bearer ${storedToken.authToken}`,
+              Authorization: `Bearer ${storedToken}`,
             },
           }
         );
