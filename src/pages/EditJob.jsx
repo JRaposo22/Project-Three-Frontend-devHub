@@ -44,6 +44,10 @@ const handleSubmit = async (e) => {
     }
 }
 
+useEffect(() => {
+    getJob();
+}, []);
+
 // delete a job
 const deleteJob = async () => {
     try {
