@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
-
+import { auth } from "./firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Signup from './pages/Signup';
@@ -15,8 +16,10 @@ import Hints from './pages/Hints';
 import AddHint from './pages/AddHint';
 import EditHint from './pages/EditHint';
 import HintDetails from './pages/HintDetails';
+import ChatBox from './pages/ChatBox';
 
 function App() {
+  const [user] = useAuthState(auth);
 
   return (
     <div className="App">
@@ -35,6 +38,7 @@ function App() {
         <Route path='/hints/add' element={<AddHint/>} />
         <Route path='/hints/edit/:id' element={<EditHint/>} />
         <Route path='/hints/:id' element={<HintDetails/>} />        
+        <Route path='/chat' element={<ChatBox/>}/>
       </Routes>
       
     </div>
