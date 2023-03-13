@@ -16,16 +16,17 @@ function Navbar() {
     }
 
   return (
-    <nav id="mySidenav" className="sidenav">
-        <Link to="/">Home</Link>
-        <button onClick={open}>Open</button>
+    <nav className='navbar'>
+    <button className='openbutton' onClick={open}>Open</button>
+    <div id="mySidenav" className="sidenav">
+        <button className='closebutton' onClick={close}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678728090/close3_mjttvh.png" alt="close window" /> </button>
+        <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
         {loggedIn ? (
         <>
-          <button onClick={close}>Close</button>
-          <Link to="/jobs"> <p className='link-sidenav'>Jobs</p> </Link>
-          <Link to="/hints"><p className='link-sidenav'>Hints</p></Link>
-          <Link to="/quiz"><p className='link-sidenav'>Quiz</p></Link>
-          <button onClick={logout}>Logout</button>
+          <Link to="/jobs" onClick={close}> <p className='link-sidenav'>Jobs</p> </Link>
+          <Link to="/hints" onClick={close}><p className='link-sidenav'>Hints</p></Link>
+          <Link to="/quiz" onClick={close}><p className='link-sidenav'>Quiz</p></Link>
+          <button className='link-sidenav logout-link' onClick={logout}>Logout</button>
         </>
       ) : (
         <>
@@ -33,8 +34,9 @@ function Navbar() {
           <Link to="/login" className='link-sidenav'>Login</Link>
         </>
       )}
+    </div>
     </nav>
-  )
+    )
 }
 
 export default Navbar;

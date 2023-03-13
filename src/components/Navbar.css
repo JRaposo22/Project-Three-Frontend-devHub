@@ -1,5 +1,5 @@
-/* 
-body {
+.navbar {
+    background-color: #323232;
     margin: 0;
     padding: 0;
 }
@@ -11,7 +11,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #323232;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -21,25 +21,46 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #7e2c2c;
+    color: white;
     display: block;
     transition: 0.3s;
   }
 
+  .home-link {
+    color: white;
+  }
+
   .link-sidenav:hover {
-    color: #872727;
+    color: rgb(121, 118, 118);
   }
 
   .closebutton {
+    padding: 0;
+    background-color: black;
+  }
+
+  .closebutton img {
+    width: 1.5vw;
+    margin: 0;
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    top: 10px;
+    left: 220px;
   }
 
   .openbutton {
-    color: black;
+    background-color: black;
+    color: white;
+    margin: 20px;
   }
 
-  /*open button : style="font-size:30px;cursor:pointer"*/
+  .logout-link {
+    background-color: #323232;
+    color: rgb(101, 99, 99);
+    padding: 0;
+    margin-left: 32px;
+  }
+
+  .logout-link:hover {
+    border: none;
+    color: rgb(16, 16, 16);
+  }
