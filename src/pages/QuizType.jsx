@@ -10,6 +10,7 @@ function QuizType() {
     const [qNumber, setQNumber] = useState(0)
     const [quiz, setQuiz] = useState([])
     const [quizEnd, setQuizEnd] = useState(false);
+    const [rightAnswers, setRightAnswers] = useState(0);
     const {type} = useParams();
     
     
@@ -19,6 +20,7 @@ function QuizType() {
         try {
             const response = await quizService.getRandomQuiz(type);
             setQuiz(response.data);
+            console.log(response.data)
 
         } catch (error) {
             console.log(error);
@@ -30,16 +32,20 @@ function QuizType() {
         
         quiz[qNumber].answers.map((answer, i) => {
             if(answer && (answer.toLowerCase() == quiz[qNumber].correctAnswer.toLowerCase())) document.getElementById(`answer${i}`).classList.add('right-answer');
-            else document.getElementById(`answer${i}`).classList.add('wrong-answer')
+            else if (answer) document.getElementById(`answer${i}`).classList.add('wrong-answer')
 
         });
+
+        if(answer.toLowerCase() == quiz[qNumber].correctAnswer.toLowerCase()) setRightAnswers(rightAnswers + 1);
 
         if(qNumber < 10) {
         const timeOutId = setTimeout(() => {
             setQNumber(qNumber + 1);
             quiz[qNumber].answers.map((answer, i) => {
+                if(answer){
                 document.getElementById(`answer${i}`).classList.remove('right-answer');
                 document.getElementById(`answer${i}`).classList.remove('wrong-answer');
+                }
             });
             console.log(qNumber);
             console.log('quizend',quizEnd)
@@ -65,7 +71,7 @@ function QuizType() {
             <>
             <h2>{quiz[qNumber].question}</h2> 
             {quiz[qNumber].answers.map((answer, i) => {
-                return <button className='quiz-answer' id={`answer${i}`} onClick={() => getAnswer(qNumber)}>{answer}</button>
+                return (answer && <button key={i} className='quiz-answer' id={`answer${i}`} onClick={() => getAnswer(qNumber, answer)}>{answer}</button>)
             })} 
             </>
            
@@ -74,11 +80,12 @@ function QuizType() {
             
          {quizEnd && (
             <>
+            <h1>You answered correctly to {rightAnswers} questions</h1>
                 {quiz.map((question, i) => {
-                   return ( <>
+                   return ( <div key={i}>
                     <h2>{question.question}</h2>
                     <h4>{question.correctAnswer}</h4>
-                    </>
+                    </div>
                    )
                 })}
             </>
