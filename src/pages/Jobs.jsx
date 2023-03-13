@@ -22,6 +22,7 @@ function Jobs() {
   return (
     <section>
       <h1>Jobs</h1>
+      <Link to='/jobs/add'>Add a Job</Link>
       {jobs.map((job) => {
         return (
           <Link to={`/jobs/${job._id}`} key={job._id}>

@@ -8,6 +8,9 @@ import Login from './pages/Login';
 import Quiz from './pages/Quiz';
 import QuizType from './pages/QuizType';
 import Jobs from './pages/Jobs';
+import AddJob from './pages/AddJob';
+import EditJob from './pages/EditJob';
+import JobDetails from './pages/JobDetails';
 
 function App() {
 
@@ -21,6 +24,10 @@ function App() {
         <Route path='/quiz/:type' element={<QuizType/>} />
         <Route path='/quiz' element={<Quiz/>} />
         <Route path='/jobs' element={<Jobs/>} />
+        <Route path='/jobs/add' element={<AddJob/>} />
+        <Route path='/jobs/edit/:id' element={<EditJob/>} />
+        <Route path='/jobs/:id' element={<JobDetails/>} />
+
         
       </Routes>
       
