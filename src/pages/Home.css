@@ -19,7 +19,7 @@ body {
 .waviy span {
     position: relative;
     display: inline-block;
-    font-size: 40px;
+    font-size: 5vw;
     color: #fff;
     
   }
@@ -63,4 +63,21 @@ body {
     0%,80% {
       transform: rotateY(360deg) 
     }
+  }
+
+  .home-information {
+    display: flex;
+    margin: 8vw 0 0 0;
+    padding: 2vw 8vw;
+    background-color:rgba(255, 255, 255, 0.127);
+    color: white;
+  }
+
+  .home-container {
+    margin: 1vw;
+    background-color: rgba(33, 32, 32, 0);
+  }
+
+  .home-container h3, p {
+    background-color: rgba(33, 32, 32, 0);
   }

@@ -45,7 +45,7 @@ function Login() {
     // ...
     });
 
-            navigate('/home');
+            navigate('/');
         } catch (error) {
             console.log(error);
         }
@@ -59,11 +59,11 @@ function Login() {
                 <h1>Login</h1>
 
                 <label htmlFor="email"></label>
-                <input type="email" placeholder='Email' name="email" id="email" value={email} onChange={handleEmail}/>
-
+                <input type="email" placeholder='Email ID' name="email" id="email" value={email} onChange={handleEmail}/>
+                <hr />
                 <label htmlFor="password"></label>
                 <input type="password" placeholder='Password' name="password" id="password" value={password} onChange={handlePassword}/>
-
+                <hr />
                 <button type="submit">Login</button>
 
                 <div className='flex-form-end'>

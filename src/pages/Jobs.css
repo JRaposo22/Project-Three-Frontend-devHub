@@ -1,0 +1,43 @@
+.alljobs {
+    margin: 50px;
+}
+
+.alljobs h1 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.linktoadd {
+    color: white;
+    text-decoration: none;
+}
+
+.linktoadd p {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.linktoadd span {
+    text-decoration: underline;
+}
+
+.linkalljob {
+    margin: 10px 250px;
+}
+
+.linkalljob h3 {
+    color: white;
+    padding-bottom: 2px;
+    margin: 0;
+}
+
+.linkalljob h4 {
+    color: white;
+    margin: 0 0 20px 0;
+    font-size: 1vw;
+}
+
+.link-decoration {
+    text-decoration: none;
+}

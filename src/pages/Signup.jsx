@@ -61,16 +61,16 @@ function Signup() {
                 
                 <label htmlFor="username"></label>
                 <input type="text" placeholder='Username' user="username" id="username" value={username} onChange={handleUsername}/>
-
+                <hr />
                 <label htmlFor="email"></label>
                 <input type="email" placeholder='Email' name="email" id="email" value={email} onChange={handleEmail}/>
-
+                <hr />
                 <label htmlFor="password"></label>
                 <input type="password" placeholder='Password' name="password" id="password" value={password} onChange={handlePassword}/>
-
+                <hr />
                 <label htmlFor="adminPass"></label>
                 <input type="adminPass" placeholder='Admin Password' name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
-
+                <hr />
                 <button type="submit">Create account</button>
                 
                 <div className='flex-form-end'>

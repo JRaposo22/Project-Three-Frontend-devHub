@@ -21,34 +21,34 @@
 
 .signupform-box input {
     border: none;
-    margin-bottom: 15px;
-    color: #bfc0c0;
-    background: #262626;
-    padding: 20px;
+    color: white;
+    background-color: #d4d2d200;;
+    padding: 20px 20px 5px 20px;
     font-size: 14px;
-    border-radius: 10px;
-    box-shadow: inset 5px 5px 5px #232323,
-                inset -5px -5px 5px #292929;
-    outline: none;
+    border: none;
 }
 
 .signupform-box h1 {
     font-size: 2vw;
     color: white;
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+}
+
+hr {
+    border: 0.5px solid white;
+    width: 100%;
 }
 
 .signupform-box button {
     margin-top: 20px;
-    padding: 20px 30px;
-    border-radius: 40px;
+    padding: 10px 60px;
+    border-radius: 10px;
     border: none;
     color: white;
     font-size: 15px;
     font-weight: 500;
-    background: #262626;
-    box-shadow:  8px 8px 15px #202020,
-                -8px -8px 15px #2c2c2c;
-    transition: box-shadow .35s ease !important;
+    background: #e8e4e43b;
     outline: none;
 }
 
@@ -56,11 +56,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .signupform-box p {
     font-size: 0.8vw;
     color: white;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .login-click {
@@ -68,4 +70,5 @@
     text-decoration: underline;
     font-size: 0.8vw;
     margin-left: 5px;
+    background-color: rgba(255, 255, 255, 0);
 }

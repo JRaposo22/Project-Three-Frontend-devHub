@@ -73,3 +73,22 @@
     border: none;
     color: rgb(16, 16, 16);
   }
+
+  .bar-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .options-style {
+    margin: 20px 80px 20px 0;
+    padding-left: 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  .style-both {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+  }

@@ -17,7 +17,19 @@ function Navbar() {
 
   return (
     <nav className='navbar'>
+    <div className='bar-options'>
     <button className='openbutton' onClick={open}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678786578/dropwhite_gfppwy.png" alt="open-menu" /> </button>
+    {loggedIn ? (
+        <>
+          <Link to="/chat" className='options-style'>Go to Chat!</Link>
+        </>
+      ) : (
+        <div className='style-both'>
+          <Link to="/signup" className='options-style'>Signup</Link>
+          <Link to="/login" className='options-style'>Login</Link>
+        </div>
+      )}
+    </div>
     <div id="mySidenav" className="sidenav">
         <button className='closebutton' onClick={close}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678728090/close3_mjttvh.png" alt="close window" /> </button>
         <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
@@ -26,6 +38,7 @@ function Navbar() {
           <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
           <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
           <Link to="/quiz" className='link-sidenav' onClick={close}>Quiz</Link>
+          <Link to="/chat" className='link-sidenav' onClick={close}>Chat</Link>
           <button className='link-sidenav logout-link' onClick={logout}>Logout</button>
         </>
       ) : (
