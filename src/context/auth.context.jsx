@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
+import { auth } from "../firebase";
 import axios from 'axios';
 
 const AuthContext = createContext();
@@ -45,7 +46,10 @@ function AuthWrapper(props) {
   const logout = () => {
     localStorage.removeItem("authToken");
     authenticateUser();
+    auth.signOut();
   }
+
+
 
   useEffect(() => {
     authenticateUser();
