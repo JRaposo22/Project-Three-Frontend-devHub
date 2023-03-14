@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import { getAuth, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-
+import '../pages/Login.css';
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -54,19 +54,23 @@ function Login() {
 
   return (
     <div>
-        <h1>Login</h1>
+        <form className='login-flex' onSubmit={handleSubmit}>
+            <div className='loginform-box'>
+                <h1>Login</h1>
 
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" value={email} onChange={handleEmail}/>
+                <label htmlFor="email"></label>
+                <input type="email" placeholder='Email' name="email" id="email" value={email} onChange={handleEmail}/>
 
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" value={password} onChange={handlePassword}/>
+                <label htmlFor="password"></label>
+                <input type="password" placeholder='Password' name="password" id="password" value={password} onChange={handlePassword}/>
 
-            <button type="submit">Login</button>
+                <button type="submit">Login</button>
 
-            <p>Don't have an account?</p>
-            <Link to="/signup">Signup</Link>
+                <div className='flex-form-end'>
+                    <p>Don't have an account?</p>
+                    <Link className='signup-click' to="/signup">Signup</Link>
+                </div>
+            </div>
         </form>
     </div>
   )

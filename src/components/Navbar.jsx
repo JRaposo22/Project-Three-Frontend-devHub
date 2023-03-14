@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <nav className='navbar'>
-    <button className='openbutton' onClick={open}>Open</button>
+    <button className='openbutton' onClick={open}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678738877/side-icon-removebg-preview_emiped.png" alt="open-menu" /> </button>
     <div id="mySidenav" className="sidenav">
         <button className='closebutton' onClick={close}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678728090/close3_mjttvh.png" alt="close window" /> </button>
         <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
@@ -30,8 +30,8 @@ function Navbar() {
         </>
       ) : (
         <>
-          <Link to="/signup" className='link-sidenav'>Signup</Link>
-          <Link to="/login" className='link-sidenav'>Login</Link>
+          <Link to="/signup" onClick={close} className='link-sidenav'>Signup</Link>
+          <Link to="/login" onClick={close} className='link-sidenav'>Login</Link>
         </>
       )}
     </div>

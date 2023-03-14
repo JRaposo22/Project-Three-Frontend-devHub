@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import '../pages/Signup.css';
 
 
 
@@ -54,25 +55,29 @@ function Signup() {
 
   return (
     <div>
-        <h1>Signup</h1>
+        <form  className='signup-flex' onSubmit={handleSubmit}>
+            <div className='signupform-box'>
+                <h1>Signup</h1>
+                
+                <label htmlFor="username"></label>
+                <input type="text" placeholder='Username' user="username" id="username" value={username} onChange={handleUsername}/>
 
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username</label>
-            <input type="text" user="username" id="username" value={username} onChange={handleUsername}/>
+                <label htmlFor="email"></label>
+                <input type="email" placeholder='Email' name="email" id="email" value={email} onChange={handleEmail}/>
 
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" value={email} onChange={handleEmail}/>
+                <label htmlFor="password"></label>
+                <input type="password" placeholder='Password' name="password" id="password" value={password} onChange={handlePassword}/>
 
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" value={password} onChange={handlePassword}/>
+                <label htmlFor="adminPass"></label>
+                <input type="adminPass" placeholder='Admin Password' name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
 
-            <label htmlFor="adminPass">Admin Password</label>
-            <input type="adminPass" name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
-
-            <button type="submit">Create account</button>
-
-            <p>Already have an account?</p>
-            <Link to="/login">Login</Link>
+                <button type="submit">Create account</button>
+                
+                <div className='flex-form-end'>
+                    <p>Already have an account?</p>
+                    <Link className='login-click' to="/login">Login</Link>
+                </div>
+            </div>
         </form>
     </div>
   )

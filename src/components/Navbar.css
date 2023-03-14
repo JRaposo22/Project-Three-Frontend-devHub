@@ -1,7 +1,9 @@
 .navbar {
-    background-color: #323232;
+    background-color: black;
     margin: 0;
     padding: 0;
+    /* position: fixed;
+    width: 100%; */
 }
 
 .sidenav {
@@ -11,7 +13,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #323232;
+    background-color: rgba(38, 37, 37, 0.793);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -22,7 +24,7 @@
     text-decoration: none;
     font-size: 25px;
     color: white;
-    display: block;
+    display: block; 
     transition: 0.3s;
   }
 
@@ -52,6 +54,15 @@
     color: white;
     margin: 20px;
   }
+
+  .openbutton img {
+    width: 2.5vw;
+  }
+
+  /* .openbutton:hover {
+    border: none;
+    color: rgb(16, 16, 16);
+  } */
 
   .logout-link {
     background-color: #323232;
