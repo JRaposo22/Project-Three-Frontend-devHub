@@ -4,6 +4,7 @@ import { AuthContext } from '../context/auth.context';
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import '../components/GoogleSigIn.css';
 
 
  function GoogleSigIn()  {
@@ -45,16 +46,15 @@ import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
   return (
     <>
     <button className="sign-in">
-          <img style={{width: '200px'}}
+          <img style={{width: '150px'}}
             onClick={googleSignIn}
             src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1678721571/singin_google_oxikhu.png"
             alt="sign in with google"
             type="button"
           />
         </button>
-        <button onClick={signOut}>Sign out</button>
         </>
   )
 }
 
-export default GoogleSigIn
+export default GoogleSigIn;

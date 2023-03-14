@@ -21,7 +21,6 @@ function Navbar() {
     <button className='openbutton' onClick={open}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678786578/dropwhite_gfppwy.png" alt="open-menu" /> </button>
     {loggedIn ? (
         <>
-          <Link to="/chat" className='options-style'>Go to Chat!</Link>
         </>
       ) : (
         <div className='style-both'>

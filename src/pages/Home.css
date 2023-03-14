@@ -81,3 +81,14 @@ body {
   .home-container h3, p {
     background-color: rgba(33, 32, 32, 0);
   }
+
+  .link-home-information {
+    color: white;
+    background-color: rgba(33, 32, 32, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .style-both {
+    color: white;
+  }

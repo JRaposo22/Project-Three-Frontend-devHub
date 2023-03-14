@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import GoogleSigIn from '../components/GoogleSigIn';
 import '../pages/Signup.css';
 
 
@@ -71,8 +72,8 @@ function Signup() {
                 <label htmlFor="adminPass"></label>
                 <input type="adminPass" placeholder='Admin Password' name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
                 <hr />
-                <button type="submit">Create account</button>
-                
+                <button type="submit" className='signupform-box-button'>Create account</button>
+                <GoogleSigIn/>
                 <div className='flex-form-end'>
                     <p>Already have an account?</p>
                     <Link className='login-click' to="/login">Login</Link>
