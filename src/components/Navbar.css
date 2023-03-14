@@ -61,12 +61,12 @@
     width: 2.5vw;
   }
 
-  .logout-link {
+  .button-link {
     background-color: rgba(51, 51, 51);
     color: rgb(101, 99, 99);
     padding: 0;
     margin-left: 32px;
-    border: none
+    border: none;
   }
 
   .logout-link:hover {
@@ -100,4 +100,22 @@
 
   .block-items {
     display: block;
+  }
+
+  .link-items {
+    background-color: rgba(51, 51, 51);
+    color: white;
+    margin-left: 32px;
+    padding-left: 0;
+    border: none;
+  }
+
+  .expand-link {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    display: block; 
+    transition: 0.3s;
+    background-color: rgba(51, 51, 51);
   }

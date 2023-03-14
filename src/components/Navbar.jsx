@@ -51,10 +51,10 @@ function Navbar() {
           <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
           ) : (
             <>
-            <button onClick={hiddenJob}>Jobs+</button>
+            <button className='link-sidenav link-items' onClick={hiddenJob}>Jobs+</button>
               <div className='expand-jobs hidden-app'>
-                <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
-                <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs Aproval</Link>
+                <Link to="/jobs" className='expand-link' onClick={close}>Jobs</Link>
+                <Link to="/jobs-approval" className='expand-link' onClick={close}>Jobs Aproval</Link>
               </div>
             </>
           )}
@@ -63,16 +63,16 @@ function Navbar() {
           <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
           ) : (
             <>
-            <button onClick={hiddenHint} className='block-items'>Hints+</button>
+            <button className='link-sidenav link-items' onClick={hiddenHint}>Hints+</button>
               <div className='expand-hints hidden-app'>
-                <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
-                <Link to="/hints" className='link-sidenav' onClick={close}>Hints Aproval</Link>
+                <Link to="/hints" className='expand-link' onClick={close}>Hints</Link>
+                <Link to="/hints-approval" className='expand-link' onClick={close}>Hints Aproval</Link>
               </div>
             </>
           )}
           <Link to="/quiz" className='link-sidenav' onClick={close}>Quiz</Link>
           <Link to="/chat" className='link-sidenav' onClick={close}>Chat</Link>
-          <button className='link-sidenav logout-link' onClick={closeAndLogout}>Logout</button>
+          <button className='link-sidenav button-link' onClick={closeAndLogout}>Logout</button>
         </>
       ) : (
         <>
