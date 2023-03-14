@@ -1,3 +1,27 @@
 .hint-flex-container {
     display: flex;
 }
+
+.allhints {
+    margin: 50px;
+}
+
+.allhints h1 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.linktoadd {
+    color: white;
+    text-decoration: none;
+}
+
+.linktoadd p {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.linktoadd span {
+    text-decoration: underline;
+}
