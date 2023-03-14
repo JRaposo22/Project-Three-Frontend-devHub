@@ -34,9 +34,9 @@ function Hints() {
 
 
   return (
-    <section>
+    <section className='allhints'>
         <h1>Hints</h1>
-        <Link to='/hints/add'>Add a hint</Link>
+        <Link to='/hints/add' className='linktoadd'><p>Do you want to share? <span>Add a Hint</span> </p></Link>
         <div className='hint-flex-container'>
             <div>
         {hints.map((hint) => {

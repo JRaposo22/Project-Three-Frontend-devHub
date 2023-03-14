@@ -20,6 +20,14 @@ function Navbar() {
       logout();
     }
 
+    const hiddenJob = function hiddenApp() {
+      document.querySelector('.expand-jobs').classList.toggle('hidden-app');
+    }
+
+    const hiddenHint = function hiddenApp2() {
+      document.querySelector('.expand-hints').classList.toggle('hidden-app');
+    }
+
   return (
     <nav className='navbar'>
     <div className='bar-options'>
@@ -39,8 +47,29 @@ function Navbar() {
         <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
         {loggedIn ? (
         <>
+          {(user.admin === 'false') ? (
           <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
+          ) : (
+            <>
+            <button onClick={hiddenJob}>Jobs+</button>
+              <div className='expand-jobs hidden-app'>
+                <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
+                <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs Aproval</Link>
+              </div>
+            </>
+          )}
+          
+          {(user.admin === 'false') ? (
           <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
+          ) : (
+            <>
+            <button onClick={hiddenHint} className='block-items'>Hints+</button>
+              <div className='expand-hints hidden-app'>
+                <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
+                <Link to="/hints" className='link-sidenav' onClick={close}>Hints Aproval</Link>
+              </div>
+            </>
+          )}
           <Link to="/quiz" className='link-sidenav' onClick={close}>Quiz</Link>
           <Link to="/chat" className='link-sidenav' onClick={close}>Chat</Link>
           <button className='link-sidenav logout-link' onClick={closeAndLogout}>Logout</button>

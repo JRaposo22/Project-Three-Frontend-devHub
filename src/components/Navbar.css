@@ -92,3 +92,12 @@
     justify-content: right;
     align-items: flex-end;
   }
+
+  .hidden-app {
+    height: 0;
+    display: none;
+  }
+
+  .block-items {
+    display: block;
+  }
