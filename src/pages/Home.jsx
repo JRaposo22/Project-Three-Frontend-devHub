@@ -25,10 +25,10 @@ function Home() {
 
       {loggedIn ? (
         <div className='style-both'>
-          <h2>Hello, {user.username}!</h2>
+          <h2>Hello, {user.username}.</h2>
         </div>
       ) : (
-        <h2>Sign up</h2>
+        <></>
       )}
       
       <div className='home-information'>

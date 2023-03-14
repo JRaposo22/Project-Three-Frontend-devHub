@@ -26,6 +26,11 @@
     margin: 10px 250px;
 }
 
+.linkalljob button {
+    border: none;
+    border-bottom: 1px solid white;
+}
+
 .linkalljob h3 {
     color: white;
     padding-bottom: 2px;
@@ -35,9 +40,34 @@
 .linkalljob h4 {
     color: white;
     margin: 0 0 20px 0;
-    font-size: 1vw;
+    font-size: 10px;
 }
 
 .link-decoration {
     text-decoration: none;
+}
+
+.job-flex-container {
+    display: flex;
+}
+
+.details-job {
+    color: white;
+}
+
+.details-job h3 {
+    font-size: 25px;
+}
+
+.details-job h4 {
+    font-size: 20px;
+}
+
+.flex-job img {
+    width: 2.5vw;
+}
+
+.flex-job {
+    display: flex;
+    align-items: center;
 }

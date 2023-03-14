@@ -5,6 +5,7 @@ import '../pages/Jobs.css';
 
 function Jobs() {
   const [jobs, setJobs] = useState([]);
+  const [job, setJob] = useState(null);
 
   const getJobs = async () => {
     try {
@@ -16,6 +17,16 @@ function Jobs() {
     }
   };
 
+  const getJob = async (id) => {
+    try {
+      const response = await jobService.jobDetails(id);
+      setJob(response.data.job);
+      console.log(response.data.job)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     getJobs();
   }, []);
@@ -24,16 +35,32 @@ function Jobs() {
     <section className='alljobs'>
       <h1>Jobs</h1>
       <Link to='/jobs/add' className='linktoadd'> <p>Do you want to share? <span>Add a Job</span> </p> </Link>
-      {jobs.map((job) => {
+        <div className='job-flex-container'>
+          <div>
+        {jobs.map((job) => {
         return (
-          <div className='linkalljob'>
-            <Link to={`/jobs/${job._id}`} key={job._id} className="link-decoration">
-              <h3>{job.title}</h3>
-              <h4>Company: {job.company}</h4>
-            </Link>
-          </div>
+          job.approved &&
+            <div className='linkalljob'>
+              <button onClick={() => getJob(job._id)} key={job._id} className="link-decoration">
+                <h3>{job.title}</h3>
+                <h4>Company: {job.company}</h4>
+              </button>
+            </div>
         );
       })}
+          </div>
+              {job && (
+                <div className='details-job'>
+                  <h1>{job.title}</h1>
+                    <div className='flex-job'>
+                      <img src={job.image} alt="image of the company" />
+                      <h2>{job.company}</h2>
+                    </div>
+                  <h3>{job.category}</h3>
+                  <p>{job.description}</p>
+                </div>
+              )}
+          </div>
     </section>
   );
 }

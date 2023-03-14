@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import jobService from '../services/job.service';
+import '../pages/JobDetails.css';
 
 function JobDetails() {
     const [job, setJob] = useState(null);
@@ -24,19 +25,20 @@ function JobDetails() {
     }, []);
 
   return (
-    <div>
+    <>
         {job && (
-            <>
-            <h1>{job.title}</h1>
-            <h2>{job.company}</h2>
-            <h3>{job.category}</h3>
-            <img src={job.image} alt="image of the company" />
-            <p>{job.description}</p>
-
-            </>
+            <div className='jobdetails'>
+                <h1>{job.title}</h1>
+                <div className='flex-job'>
+                    <img src={job.image} alt="image of the company" />
+                    <h2>{job.company}</h2>
+                </div>
+                <h3>{job.category}</h3>
+                <p>{job.description}</p>
+            </div>
         )}
         {job && user.admin == true && <Link to={`/jobs/edit/${job._id}`}>Edit job</Link>}
-    </div>
+    </>
     
   )
 }

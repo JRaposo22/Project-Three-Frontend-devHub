@@ -15,6 +15,11 @@ function Navbar() {
       document.getElementById("mySidenav").style.width = "0";
     }
 
+    const closeAndLogout = function closeLogout() {
+      document.getElementById("mySidenav").style.width = "0";
+      logout();
+    }
+
   return (
     <nav className='navbar'>
     <div className='bar-options'>
@@ -38,7 +43,7 @@ function Navbar() {
           <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
           <Link to="/quiz" className='link-sidenav' onClick={close}>Quiz</Link>
           <Link to="/chat" className='link-sidenav' onClick={close}>Chat</Link>
-          <button className='link-sidenav logout-link' onClick={logout}>Logout</button>
+          <button className='link-sidenav logout-link' onClick={closeAndLogout}>Logout</button>
         </>
       ) : (
         <>

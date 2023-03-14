@@ -1,0 +1,25 @@
+.jobdetails {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 30vw;
+}
+
+.jobdetails h1,
+h2,
+h3,
+img,
+p {
+    margin: 5px;
+}
+
+.jobdetails img {
+    width: 3vw;
+}
+
+.flex-job {
+    display: flex;
+    align-items: center;
+}

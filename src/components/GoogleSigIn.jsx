@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/auth.context';
 import { auth } from "../firebase";
+import { useNavigate } from 'react-router';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import '../components/GoogleSigIn.css';
@@ -10,6 +11,7 @@ import '../components/GoogleSigIn.css';
  function GoogleSigIn()  {
     const [user] = useAuthState(auth);
     const { authenticateUser } = useContext(AuthContext);
+    const navigate = useNavigate();
     const registerGoogle = async () => {  
       
       try {
@@ -23,7 +25,7 @@ import '../components/GoogleSigIn.css';
           authenticateUser(); 
           console.log(responseUser) 
         }
-                     
+        navigate('/');
         
       } catch (error) {
         console.log(error);
