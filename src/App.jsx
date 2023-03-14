@@ -17,6 +17,7 @@ import AddHint from './pages/AddHint';
 import EditHint from './pages/EditHint';
 import HintDetails from './pages/HintDetails';
 import ChatBox from './pages/ChatBox';
+import JobsApproval from './pages/JobsApproval';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -39,6 +40,7 @@ function App() {
         <Route path='/hints/edit/:id' element={<EditHint/>} />
         <Route path='/hints/:id' element={<HintDetails/>} />        
         <Route path='/chat' element={<ChatBox/>}/>
+        <Route path='/jobs-approval' element={<JobsApproval/>} />
       </Routes>
       
     </div>

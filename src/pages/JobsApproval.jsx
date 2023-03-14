@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Job from '../components/Job';
 import jobService from '../services/job.service';
+import Job from '../components/Job';
 import '../pages/Jobs.css';
 
-function Jobs() {
+function JobsApproval() {
   const [jobs, setJobs] = useState([]);
   const [job, setJob] = useState(null);
 
@@ -35,25 +35,19 @@ function Jobs() {
   return (
     <section className='alljobs'>
       <h1>Jobs</h1>
-      <Link to='/jobs/add' className='linktoadd'> <p>Do you want to share? <span>Add a Job</span> </p> </Link>
         <div className='job-flex-container'>
           <div>
         {jobs.map((job) => {
         return (
-          job.approved &&
-            <div className='linkalljob'>
-              <button onClick={() => getJob(job._id)} key={job._id} className="link-decoration">
-                <h3>{job.title}</h3>
-                <h4>Company: {job.company}</h4>
-              </button>
-            </div>
+          !job.approved &&
+          <Job job={job}/>
         );
       })}
           </div>
-          <Job job={job}/>  
+              
           </div>
     </section>
   );
 }
 
-export default Jobs;
+export default JobsApproval;
