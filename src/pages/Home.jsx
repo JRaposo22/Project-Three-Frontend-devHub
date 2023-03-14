@@ -10,13 +10,13 @@ function Home() {
   return (
     <div className='home-flex'>
       <div className='waviy'>
-        <span className="--i:1">D</span>
-        <span className="--i:2">e</span>
-        <span className="--i:3">v</span>
-        <span className="--i:4">H</span>
-        <span className="--i:5">u</span>
-        <span className="--i:6">b</span>
-        <span className="--i:7">.</span>
+        <span className="span1">D</span>
+        <span className="span2">e</span>
+        <span className="span3">v</span>
+        <span className="span4">H</span>
+        <span className="span5">u</span>
+        <span className="span6">b</span>
+        <span className="span7">.</span>
       </div>
       <h2>Hello</h2>
       <Link to='/signup'>Signup</Link>

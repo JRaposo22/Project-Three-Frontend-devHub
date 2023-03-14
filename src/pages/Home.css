@@ -21,9 +21,42 @@ body {
     display: inline-block;
     font-size: 40px;
     color: #fff;
-    text-transform: uppercase;
-    animation: flip 3s infinite;
-    animation-delay: calc(.3s * var(--i));
+    
+  }
+
+  .span1 {
+    animation: 8s flip infinite;
+    animation-delay: -0.5s;
+  }
+
+  .span2 {
+    animation: 8s flip infinite;
+    animation-delay: 0s;
+  }
+
+  .span3 {
+    animation: 8s flip infinite;
+    animation-delay: 0.5s;
+  }
+
+  .span4 {
+    animation: 8s flip infinite;
+    animation-delay: 1s;
+  }
+
+  .span5 {
+    animation: 8s flip infinite;
+    animation-delay: 1.5s;
+  }
+
+  .span6 {
+    animation: 8s flip infinite;
+    animation-delay: 2s;
+  }
+
+  .span7 {
+    animation: 8s flip infinite;
+    animation-delay: 2.5s;
   }
 
   @keyframes flip {
