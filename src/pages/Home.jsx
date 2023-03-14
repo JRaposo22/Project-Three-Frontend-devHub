@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GoogleSigIn from '../components/GoogleSigIn';
 import '../pages/Home.css';
-
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 
 
 function Home() {
- 
+  const [user] = useAuthState(auth);
+  console.log(user)
   return (
     <div className='home-flex'>
       <div className='waviy'>
