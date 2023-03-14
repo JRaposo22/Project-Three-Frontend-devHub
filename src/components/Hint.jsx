@@ -1,8 +1,13 @@
 import React from 'react'
 
-function Hint() {
+function Hint(props) {
+    const{hint} = props;
   return (
-    <div>Hint</div>
+    <div>
+    <h3>{hint.title}</h3>
+    <h4>{hint.category}</h4>
+    <p>{hint.description}</p>
+    </div>
   )
 }
 

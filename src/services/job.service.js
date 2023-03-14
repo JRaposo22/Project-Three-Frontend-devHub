@@ -32,6 +32,12 @@ class JobService {
   jobDetails = (id) => {
     return this.api.get(`/api/jobs/${id}`);
   };
+
+   // job approve
+
+   jobApprove = (id) => {
+    return this.api.put(`/api/jobs/${id}/approve`);
+  };
 }
 
 const jobService = new JobService();

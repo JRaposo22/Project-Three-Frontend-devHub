@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import hintService from '../services/hint.service'
+import Hint from '../components/Hint';
 import '../pages/Hints.css';
 
 
@@ -18,16 +19,6 @@ function Hints() {
         }
     }
 
-    const getHint = async (id) => {
-        try {
-            const response = await hintService.hintDetails(id);
-            setHint(response.data.hint);
-            console.log(response.data.hint);
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
     useEffect(() => {
         getHints();
     }, []);
@@ -42,22 +33,10 @@ function Hints() {
         {hints.map((hint) => {
             return (
                 hint.approved && 
-                <div className='linkallhint'>
-                    <button onClick={() => getHint(hint._id)} key={hint._id}>
-                        <h3>{hint.title}</h3>
-                        <h4>{hint.category}</h4>
-                    </button>
-                </div>
+                <Hint hint={hint}/>
             )
         })}
             </div>
-            {hint && (
-                <div className='details-hint'>
-                    <h1>{hint.title}</h1>
-                    <h3>{hint.category}</h3>
-                    <p>{hint.description}</p>
-                </div>
-            )}
         </div>
     </section>
   )

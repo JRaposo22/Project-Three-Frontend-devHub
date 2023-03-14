@@ -28,6 +28,18 @@ function JobsApproval() {
     }
   }
 
+  const approveJob = async (id) => {
+    try {
+      const response = await jobService.jobApprove(id);
+      setJob(response.data.job);
+      const responseJobs = await jobService.getAllJobs();
+      setJobs(responseJobs.data)
+      console.log(response)
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
   useEffect(() => {
     getJobs();
   }, []);
@@ -39,8 +51,15 @@ function JobsApproval() {
           <div>
         {jobs.map((job) => {
         return (
-          !job.approved &&
-          <Job job={job}/>
+            
+          !job.approved &&(
+            <>
+            <Job job={job}/>
+          <button onClick={() => approveJob(job._id)}>Approve</button>
+            </>
+          )
+          
+         
         );
       })}
           </div>

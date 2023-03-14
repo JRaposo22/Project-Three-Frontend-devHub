@@ -30,6 +30,10 @@ class HintService {
         return this.api.get(`/api/hints/${id}`)
     };
 
+    hintApprove = (id) => {
+    return this.api.put(`/api/hint/${id}/approve`);
+  };
+
 }
 
 const hintService = new HintService();
