@@ -31,6 +31,7 @@ function Home() {
         <></>
       )}
       
+      <img className='background-image-home' src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678912808/background-img_s0slfp.jpg" alt="" />
       <div className='home-information'>
         <div className='home-container'>
         <Link to="/jobs" className='link-home-information'>Jobs</Link>
