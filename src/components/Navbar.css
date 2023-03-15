@@ -19,6 +19,11 @@
     padding-top: 60px;
   }
 
+  .logout-flex {
+    position: absolute;
+    bottom: 10%;
+  }
+
   .link-sidenav {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -38,6 +43,10 @@
   }
 
   .closebutton {
+    background-color: transparent;
+    border: none;
+  }
+  .closebutton img {
     padding: 0;
     background-color: rgba(51, 51, 51);
   }
@@ -57,10 +66,6 @@
     border: none;
   }
 
-  .openbutton img {
-    width: 2.5vw;
-  }
-
   .button-link {
     background-color: rgba(51, 51, 51);
     color: rgb(101, 99, 99);
@@ -74,11 +79,7 @@
     color: rgb(16, 16, 16);
   }
 
-  .bar-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
 
   .options-style {
     margin: 20px 80px 20px 0;
@@ -90,7 +91,6 @@
   .style-both {
     display: flex;
     justify-content: right;
-    align-items: flex-end;
   }
 
   .hidden-app {
@@ -131,7 +131,16 @@
   }
 
   .flex-icon img {
-    width: 2.5vw;
+    width: 35px;
     background-color: rgba(51, 51, 51, 0);
     margin: 0 1vw 0 1vw;
+  }
+
+  .flex-icon button {
+    background-color: rgba(51, 51, 51, 0);
+    border: none;
+  }
+
+  .image-user {
+    border-radius: 50%;
   }

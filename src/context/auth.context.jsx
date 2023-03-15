@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from 'react';
 import { auth } from "../firebase";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -43,10 +44,14 @@ function AuthWrapper(props) {
     }
   };
 
+
+  const navigate = useNavigate();
+
   const logout = () => {
     localStorage.removeItem("authToken");
     authenticateUser();
     auth.signOut();
+    navigate('/');
   }
 
 

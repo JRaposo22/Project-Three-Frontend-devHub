@@ -35,34 +35,39 @@ function Navbar() {
 
   return (
     <nav className='navbar'>
-    <div className='bar-options'>
-    <button className='openbutton' onClick={open}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678786578/dropwhite_gfppwy.png" alt="open-menu" /> </button>
-    {loggedIn ? (
-        <>
-        </>
-      ) : (
+      <div>
+      {!loggedIn &&
         <div className='style-both'>
           <Link to="/signup" className='options-style'>Signup</Link>
           <Link to="/login" className='options-style'>Login</Link>
         </div>
-      )}
+      }
     </div>
-    <div id="mySidenav" className="sidenav">
-        <button className='closebutton' onClick={close}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678728090/close3_mjttvh.png" alt="close window" /> </button>
-        <div className='flex-icon'>
-          <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678896984/home-icon_dvzapa.png" alt="" />
-          <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
-        </div>
+    {loggedIn && 
+        <div id="mySidenav" className="sidenav">
+          <button className='closebutton' onClick={close}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678908074/close-icon_upokp8.png" alt="close window" /> </button>
+          {loggedIn && (
+          <div className='flex-icon'>
+            <button onClick={open} ><img className='image-user' src={user && user.imageUrl} alt="" /></button>
+            <Link to={`/profile/${user && user._id}`} className='link-sidenav' onClick={close}>Profile</Link>
+          </div>
+        )}
+          <div className='flex-icon'>
+            <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678896984/home-icon_dvzapa.png" alt="" /></button>
+            <Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link>
+          </div>
         {loggedIn ? (
         <>
           {(!user.admin) ? (
           <div className='flex-icon'>
-            <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" />
-            <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
+            <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>            <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
           </div>
           ) : (
             <>
-            <button className='link-sidenav link-items' onClick={hiddenJob}>Jobs+</button>
+            <div className='flex-icon'>
+              <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>
+              <button className='link-sidenav link-items' onClick={hiddenJob}>Jobs+</button>
+              </div>
               <div className='expand-jobs hidden-app'>
                 <Link to="/jobs" className='expand-link' onClick={close}>Jobs</Link>
                 <Link to="/jobs-approval" className='expand-link' onClick={close}>Jobs Aproval</Link>
@@ -72,11 +77,12 @@ function Navbar() {
           
           {(!user.admin) ? (
             <div className='flex-icon'>
-              <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" />
+              <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" /></button>
               <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
             </div>
           ) : (
             <>
+            <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" /></button>
             <button className='link-sidenav link-items' onClick={hiddenHint}>Hints+</button>
               <div className='expand-hints hidden-app'>
                 <Link to="/hints" className='expand-link' onClick={close}>Hints</Link>
@@ -85,15 +91,17 @@ function Navbar() {
             </>
           )}
           <div className='flex-icon'>
-            <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902359/quiz-icon_axhtw9.png" alt="" />
+          <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902359/quiz-icon_axhtw9.png" alt="" /></button>
             <Link to="/quiz" className='link-sidenav' onClick={close}>Quiz</Link>
           </div>
           <div className='flex-icon'>
-            <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902550/quiz-icon_isu1ih.png" alt="" />
+            <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902550/quiz-icon_isu1ih.png" alt="" /></button>
             <Link to="/chat" className='link-sidenav' onClick={close}>Chat</Link>
           </div>
-          <Link to={`/profile/${user._id}`} className='link-sidenav' onClick={close}>Profile</Link>
-          <button className='link-sidenav button-link' onClick={closeAndLogout}>Logout</button>
+          <div className='flex-icon logout-flex'>
+            <button onClick={open} style={{marginTop: "8px"}}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678905369/logout_wzzi8x.png" alt="" /></button>
+            <button className='link-sidenav button-link' onClick={closeAndLogout}>Logout</button>
+          </div>
         </>
       ) : (
         <>
@@ -102,6 +110,8 @@ function Navbar() {
         </>
       )}
     </div>
+    }
+
     </nav>
     )
 }
