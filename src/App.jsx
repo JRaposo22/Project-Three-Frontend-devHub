@@ -25,7 +25,7 @@ import EditProfile from './pages/EditProfile';
 
 function App() {
   const [user] = useAuthState(auth);
-  const { loading } = useContext(AuthContext);
+  //const { loading } = useContext(AuthContext);
 
   return (
     <div className="App">
