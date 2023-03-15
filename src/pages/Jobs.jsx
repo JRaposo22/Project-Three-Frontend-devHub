@@ -39,7 +39,7 @@ function Jobs() {
       <h1>Jobs</h1>
       <Link to='/jobs/add' className='linktoadd'> <p>Do you want to share? <span>Add a Job</span> </p> </Link>
         <div className='job-flex-container'>
-          <div>
+          <div className='all-jobs-flex'>
         {jobs.map((job) => {
         return (
           job.approved &&

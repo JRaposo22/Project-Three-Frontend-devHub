@@ -5,13 +5,14 @@ function Job(props) {
   return (
     <div>{job && (
         <div className='details-job'>
+        <img src={job.image} alt="image of the company" />
           <h1>{job.title}</h1>
             <div className='flex-job'>
-              <img src={job.image} alt="image of the company" />
-              <h2>{job.company}</h2>
+              
+              <h2>Company : {job.company}</h2>
             </div>
-          <h3>{job.category}</h3>
-          <p>{job.description}</p>
+          <h3>Category : {job.category}</h3>
+          <p>Description : {job.description}</p>
         </div>
       )}</div>
   )

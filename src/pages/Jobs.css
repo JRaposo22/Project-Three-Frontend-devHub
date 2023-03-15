@@ -2,6 +2,10 @@
     margin: 50px;
 }
 
+.all-jobs-flex{
+    width:700px;
+}
+
 .alljobs h1 {
     color: white;
     text-transform: uppercase;
@@ -23,12 +27,20 @@
 }
 
 .linkalljob {
-    margin: 10px 250px;
+    margin: 10px 0px 10px 250px;
+    
+    
 }
 
 .linkalljob button {
     border: none;
-    border-bottom: 1px solid white;
+    
+    background: rgba(105, 104, 104, 0.341);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(105, 104, 104, 0.118);
 }
 
 .linkalljob h3 {
@@ -44,7 +56,9 @@
 }
 
 .link-decoration {
+    background-color: gray;
     text-decoration: none;
+    width:300px;
 }
 
 .job-flex-container {
@@ -53,6 +67,9 @@
 
 .details-job {
     color: white;
+    border:1px solid gray;
+    min-height: 600px;
+    min-width: 500px;
 }
 
 .details-job h3 {

@@ -9,6 +9,7 @@ import {
 import { db } from "../firebase";
 import Message from "../components/Message";
 import SendMessage from "../components/SendMessage";
+import './ChatBox.css'
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
