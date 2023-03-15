@@ -16,13 +16,14 @@ class UserService {
         })
     }
 
-    getRandomQuiz = (type) =>{
-        return this.api.get(`/api/quiz/${type}`);
-    };
 
-    getSpecificQuiz = (type) => {
-        return this.api.get(`/api/quiz/${type}`)
-    };
+    getUser = () => {
+        return this.api.get(`/profile`)
+    }
+
+    editUser = (id, body) => {
+        return this.api.put(`/profile/${id}`, body)
+    }
 }
 
 const userService = new UserService();

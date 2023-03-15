@@ -26,7 +26,7 @@ function JobDetails() {
     }, []);
 
   return (
-    <>
+    <> 
         <Job job={job}/>
         {job && user.admin == true && <Link to={`/jobs/edit/${job._id}`}>Edit job</Link>}
     </>

@@ -19,6 +19,8 @@ import HintDetails from './pages/HintDetails';
 import ChatBox from './pages/ChatBox';
 import JobsApproval from './pages/JobsApproval';
 import HintsApproval from './pages/HintsApproval';
+import Profile from './pages/Profile';
+import EditProfile from './pages/EditProfile';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -43,6 +45,10 @@ function App() {
         <Route path='/chat' element={<ChatBox/>}/>
         <Route path='/jobs-approval' element={<JobsApproval/>} />
         <Route path='/hints-approval' element={<HintsApproval/>} />
+        <Route path='/profile' element={<Profile/>} />
+        <Route path='/edit-profile' element={<EditProfile/>} />
+
+
       </Routes>
       
     </div>
