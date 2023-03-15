@@ -66,6 +66,7 @@ function QuizType() {
 
   return (
     <div className="quiz">
+    <img className="quiz-bg-image" src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1678908790/MERN-part-1_tikuml.png" alt="" /> 
         <h1 className="quiz-title">{type} Quiz</h1>
          {(quiz.length > 0) && !quizEnd && (
             <>
@@ -85,9 +86,9 @@ function QuizType() {
             <h1 className="quiz-end-title">You answered correctly to {rightAnswers} questions</h1>
             <div className="quiz-end-container">
                 {quiz.map((question, i) => {
-                   return ( <div key={i}>
-                    <h2>{question.question}</h2>
-                    <h4>{question.correctAnswer}</h4>
+                   return ( <div className="quiz-end-board" key={i}>
+                    <h2 className="quiz-end-question">{question.question}</h2>
+                    <h4 className="quiz-end-answer">{question.correctAnswer}</h4>
                     </div>
                    )
                 })}
