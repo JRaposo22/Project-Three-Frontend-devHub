@@ -6,8 +6,10 @@ import { getAuth, signInWithEmailAndPassword, updateProfile } from "firebase/aut
 import '../pages/Login.css';
 
 function Login() {
+    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState('')
 
     const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
@@ -30,24 +32,28 @@ function Login() {
             // ...
             })
             .catch((error) => {
+                
             const errorCode = error.code;
-            const errorMessage = error.message;
+            const errorMessage = error.message; 
+            
   });
 
-  //FIREBASE UPDATE
-  updateProfile(auth.currentUser, {
-    displayName: response.data.foundUser.username, photoURL: "https://example.com/jane-q-user/profile.jpg"
-    }).then(() => {
-    // Profile updated!
-    // ...
-    }).catch((error) => {
-    // An error occurred
-    // ...
-    });
+            //FIREBASE UPDATE
+            updateProfile(auth.currentUser, {
+            displayName: response.data.foundUser.username, photoURL: "https://example.com/jane-q-user/profile.jpg"
+            }).then(() => {
+            // Profile updated!
+            // ...
+            }).catch((error) => {
+            // An error occurred
+            // ...
+            });
 
             navigate('/');
         } catch (error) {
-            console.log(error);
+            setError(error.response.data.message);
+            
+            console.log(error.response.data.message);
         }
     }
 
@@ -64,7 +70,9 @@ function Login() {
                 <label htmlFor="password"></label>
                 <input type="password" placeholder='Password' name="password" id="password" value={password} onChange={handlePassword}/>
                 <hr />
+                <h3>{error}</h3>
                 <button type="submit">Login</button>
+                
 
                 <div className='flex-form-end'>
                     <p>Don't have an account?</p>
