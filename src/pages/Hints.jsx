@@ -8,12 +8,14 @@ import '../pages/Hints.css';
 function Hints() {
     const [hints, setHints] = useState([]);
     const [hint, setHint] = useState(null);
+    const [user, setUser] = useState(null);
 
     const getHints = async () => {
         try {
             const response = await hintService.getAllHints();
-            console.log(response.data);
-            setHints(response.data);
+            console.log(response.data.hints);
+            setHints(response.data.hints);
+            setUser(response.data.user);
         } catch (error) {
             console.log(error);
         }
@@ -32,8 +34,12 @@ function Hints() {
             <div>
         {hints.map((hint) => {
             return (
-                hint.approved && 
+                hint.approved && (
+                    <>
                 <Hint hint={hint}/>
+                {hint && user.admin == true && <Link to={`/hints/edit/${hint._id}`}>Edit Hint</Link>}
+                </>
+                )
             )
         })}
             </div>

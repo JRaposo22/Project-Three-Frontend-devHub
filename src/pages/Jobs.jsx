@@ -7,12 +7,13 @@ import '../pages/Jobs.css';
 function Jobs() {
   const [jobs, setJobs] = useState([]);
   const [job, setJob] = useState(null);
+  const [user, setUser] = useState(null)
 
   const getJobs = async () => {
     try {
       const response = await jobService.getAllJobs();
-      console.log(response.data);
       setJobs(response.data);
+      
     } catch (error) {
       console.log(error);
     }
@@ -23,6 +24,7 @@ function Jobs() {
       const response = await jobService.jobDetails(id);
       setJob(response.data.job);
       console.log(response.data.job)
+      setUser(response.data.user)
     } catch (error) {
       console.log(error)
     }
@@ -50,7 +52,8 @@ function Jobs() {
         );
       })}
           </div>
-          <Job job={job}/>  
+          <Job job={job}/>
+          {job && user.admin == true && <Link to={`/jobs/edit/${job._id}`}>Edit job</Link>}  
           </div>
     </section>
   );

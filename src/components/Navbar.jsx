@@ -7,6 +7,7 @@ import '../components/Navbar.css';
 function Navbar() {
     const { loggedIn, user, logout } = useContext(AuthContext);
 
+    console.log(user)
     const open = function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
     }
@@ -47,7 +48,7 @@ function Navbar() {
         <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
         {loggedIn ? (
         <>
-          {(user.admin === 'false') ? (
+          {(!user.admin) ? (
           <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
           ) : (
             <>
@@ -59,7 +60,7 @@ function Navbar() {
             </>
           )}
           
-          {(user.admin === 'false') ? (
+          {(!user.admin) ? (
           <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
           ) : (
             <>

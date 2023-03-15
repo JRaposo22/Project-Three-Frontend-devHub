@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import jobService from '../services/job.service';
 
 function EditJob() {
 const [title, setTitle] = useState("");
@@ -21,12 +22,13 @@ const { id } = useParams();
 
 const getJob = async () => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/jobs/${id}`);
-        setTitle(response.data.title);
-        setCompany(response.data.company);
-        setDescription(response.data.description);
-        setImage(response.data.image);
-        setCategory(response.data.category);
+        const response = await jobService.jobDetails(id);
+        console.log(response.data)
+        setTitle(response.data.job.title);
+        setCompany(response.data.job.company);
+        setDescription(response.data.job.description);
+        setImage(response.data.job.image);
+        setCategory(response.data.job.category);
 
     } catch (error) {
         console.log(error);

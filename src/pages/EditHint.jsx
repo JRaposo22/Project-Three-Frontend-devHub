@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import hintService from '../services/hint.service';
 
 function AddHint() {
     const [title, setTitle] = useState("");
@@ -17,10 +18,10 @@ function AddHint() {
 
     const getHint = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/hints/${id}`);
-            setTitle(response.data.title);
-            setDescription(response.data.description);
-            setCategory(response.data.category);
+            const response = await hintService.hintDetails(id);
+            setTitle(response.data.hint.title);
+            setDescription(response.data.hint.description);
+            setCategory(response.data.hint.category);
     
         } catch (error) {
             console.log(error);
