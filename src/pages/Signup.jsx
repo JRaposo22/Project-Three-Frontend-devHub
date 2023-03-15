@@ -13,6 +13,7 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [adminPass, setAdminPass] = useState("");
+    const [error, setError] = useState('');
 
     const handleUsername = (e) => setUsername(e.target.value);
     const handleEmail = (e) => setEmail(e.target.value);
@@ -49,6 +50,7 @@ function Signup() {
   
             navigate('/login');
         } catch (error) {
+            setError(error.response.data.message);
             console.log(error);
         }
     }
@@ -72,6 +74,7 @@ function Signup() {
                 <label htmlFor="adminPass"></label>
                 <input type="adminPass" placeholder='Admin Password' name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
                 <hr />
+                <h3>{error}</h3>
                 <button type="submit" className='signupform-box-button'>Create account</button>
                 <GoogleSigIn/>
                 <div className='flex-form-end'>

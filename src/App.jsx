@@ -45,8 +45,8 @@ function App() {
         <Route path='/chat' element={<ChatBox/>}/>
         <Route path='/jobs-approval' element={<JobsApproval/>} />
         <Route path='/hints-approval' element={<HintsApproval/>} />
-        <Route path='/profile' element={<Profile/>} />
-        <Route path='/edit-profile' element={<EditProfile/>} />
+        <Route path='/profile/:id' element={<Profile/>} />
+        <Route path='/edit-profile/:id' element={<EditProfile/>} />
 
 
       </Routes>

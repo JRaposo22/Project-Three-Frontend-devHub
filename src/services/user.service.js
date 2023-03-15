@@ -17,8 +17,8 @@ class UserService {
     }
 
 
-    getUser = () => {
-        return this.api.get(`/profile`)
+    getUser = (id) => {
+        return this.api.get(`/profile/${id}`)
     }
 
     editUser = (id, body) => {
