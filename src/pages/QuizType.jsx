@@ -65,22 +65,25 @@ function QuizType() {
     }, [])
 
   return (
-    <div>
-        <h1>{type} Quiz</h1>
+    <div className="quiz">
+        <h1 className="quiz-title">{type} Quiz</h1>
          {(quiz.length > 0) && !quizEnd && (
             <>
-            <h2>{quiz[qNumber].question}</h2> 
+            <h2 className="question">{quiz[qNumber].question}</h2> 
+            <div className="answers-container">
             {quiz[qNumber].answers.map((answer, i) => {
                 return (answer && <button key={i} className='quiz-answer' id={`answer${i}`} onClick={() => getAnswer(qNumber, answer)}>{answer}</button>)
             })} 
+            </div>
             </>
            
         )} 
-            {quizEnd && <h1>FIM DO QUIZ</h1>}
+            
             
          {quizEnd && (
             <>
-            <h1>You answered correctly to {rightAnswers} questions</h1>
+            <h1 className="quiz-end-title">You answered correctly to {rightAnswers} questions</h1>
+            <div className="quiz-end-container">
                 {quiz.map((question, i) => {
                    return ( <div key={i}>
                     <h2>{question.question}</h2>
@@ -88,6 +91,7 @@ function QuizType() {
                     </div>
                    )
                 })}
+                </div>
             </>
          )}  
              

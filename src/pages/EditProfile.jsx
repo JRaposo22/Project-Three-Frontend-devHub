@@ -18,9 +18,22 @@ function EditProfile() {
     const handleUsername = (e) => setUsername(e.target.value);
     const handleEmail = (e) => setEmail(e.target.value);
 
-    const handleImage = (e) => {
-        setImage(e.target.files[0]);
-        console.log(image)
+    const handleImage = async (e) => {
+        const uploadData = new FormData();
+
+        uploadData.append('imageUrl', e.target.files[0]);
+
+        try {
+
+            const response = await axios.post("http://localhost:5005/upload", uploadData);
+            setImage(response.data.fileUrl);
+
+            
+        } catch (error) {
+            console.log(error);
+        }
+
+
     
     }
 
@@ -39,13 +52,7 @@ function EditProfile() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        formData.append(
-            'profile-pic',
-            image
-        )
-        console.log(formData)
-        const body = {username, email, imageUrl:formData};
+        const body = {username, email, imageUrl:image};
         try {
             const response = await userService.editUser(id, body);
             navigate(`/profile/${id}`);
@@ -62,7 +69,7 @@ function EditProfile() {
     <div>
         <h1>Edit Profile</h1>
 
-            <form onSubmit={handleSubmit} encType='multipart/form-data'>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input type="text" name="username" id="username" value={username} onChange={handleUsername}/>
 
