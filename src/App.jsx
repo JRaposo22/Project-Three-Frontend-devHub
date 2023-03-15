@@ -2,7 +2,6 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { AuthContext } from './context/auth.context';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Signup from './pages/Signup';
@@ -25,7 +24,6 @@ import EditProfile from './pages/EditProfile';
 
 function App() {
   const [user] = useAuthState(auth);
-  //const { loading } = useContext(AuthContext);
 
   return (
     <div className="App">

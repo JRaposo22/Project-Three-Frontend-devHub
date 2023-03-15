@@ -13,11 +13,15 @@ function Navbar() {
     }
     
     const close = function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.width = "50px";
+    }
+
+    const closeAndHidden = function closeHidden() {
+      document.querySelector('.options').classList.toggle('hidden-options');
     }
 
     const closeAndLogout = function closeLogout() {
-      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.width = "50px";
       logout();
     }
 
@@ -45,7 +49,10 @@ function Navbar() {
     </div>
     <div id="mySidenav" className="sidenav">
         <button className='closebutton' onClick={close}> <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678728090/close3_mjttvh.png" alt="close window" /> </button>
-        <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
+        <div className='flex-icon'>
+          <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678896984/home-icon_dvzapa.png" alt="" />
+          <div><Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link></div>
+        </div>
         {loggedIn ? (
         <>
           {(!user.admin) ? (
