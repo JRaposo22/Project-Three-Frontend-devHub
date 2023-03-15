@@ -13,7 +13,7 @@ function Navbar() {
     }
     
     const close = function closeNav() {
-      document.getElementById("mySidenav").style.width = "50px";
+      document.getElementById("mySidenav").style.width = "75px";
     }
 
     const closeAndHidden = function closeHidden() {
@@ -56,7 +56,10 @@ function Navbar() {
         {loggedIn ? (
         <>
           {(!user.admin) ? (
-          <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
+          <div className='flex-icon'>
+            <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" />
+            <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
+          </div>
           ) : (
             <>
             <button className='link-sidenav link-items' onClick={hiddenJob}>Jobs+</button>
@@ -68,7 +71,10 @@ function Navbar() {
           )}
           
           {(!user.admin) ? (
-          <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
+            <div className='flex-icon'>
+              <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" />
+              <Link to="/hints" className='link-sidenav' onClick={close}>Hints</Link>
+            </div>
           ) : (
             <>
             <button className='link-sidenav link-items' onClick={hiddenHint}>Hints+</button>
@@ -78,8 +84,14 @@ function Navbar() {
               </div>
             </>
           )}
-          <Link to="/quiz" className='link-sidenav' onClick={close}>Quiz</Link>
-          <Link to="/chat" className='link-sidenav' onClick={close}>Chat</Link>
+          <div className='flex-icon'>
+            <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902359/quiz-icon_axhtw9.png" alt="" />
+            <Link to="/quiz" className='link-sidenav' onClick={close}>Quiz</Link>
+          </div>
+          <div className='flex-icon'>
+            <img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902550/quiz-icon_isu1ih.png" alt="" />
+            <Link to="/chat" className='link-sidenav' onClick={close}>Chat</Link>
+          </div>
           <Link to={`/profile/${user._id}`} className='link-sidenav' onClick={close}>Profile</Link>
           <button className='link-sidenav button-link' onClick={closeAndLogout}>Logout</button>
         </>
