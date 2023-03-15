@@ -1,0 +1,57 @@
+.flex-edit-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-edit-profile img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.profileform-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #262626;
+    border: none;
+    margin: 20px;
+    padding: 50px;
+    box-shadow:  38px 38px 56px #161616,
+    -25px -25px 38px #0f0f0f;
+}
+
+.profileform-box input {
+    border: none;
+    padding: 20px 20px 5px 20px;
+    font-size: 14px;
+    border: none;
+}
+
+.profileform-box h1 {
+    font-size: 2vw;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+}
+
+.profileform-box button {
+    margin-top: 20px;
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    background: #e8e4e43b;
+    outline: none;
+} 
+
+.profileform-box p {
+    font-size: 0.8vw;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+}

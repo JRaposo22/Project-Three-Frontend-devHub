@@ -1,0 +1,21 @@
+.flex-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-profile img {
+    width: 200px;
+    margin-top: 100px;
+    border-radius: 50%;
+}
+
+.flex-profile h2, h3 {
+    color: white;
+}
+
+.profile-edit-link {
+    color: white;
+    font-size: 15px;
+}

@@ -3,6 +3,8 @@ import { AuthContext } from '../context/auth.context';
 import { Link, useParams } from 'react-router-dom';
 import userService from '../services/user.service';
 import axios from 'axios';
+import '../pages/Profile.css';
+
 
 
 function Profile() {
@@ -29,12 +31,11 @@ function Profile() {
 
   return (
     userProfile && 
-        <div>
-            <h1>Profile</h1>
+        <div className='flex-profile'>
+            <img src={userProfile.imageUrl} alt="" />
             <h2>{userProfile.username}</h2>
             <h3>{userProfile.email}</h3>
-            <img src={userProfile.imageUrl} alt="" />
-            <Link to={`/edit-profile/${id}`}>Edit</Link>
+            <Link className='profile-edit-link' to={`/edit-profile/${id}`}>Edit profile</Link>
         </div>
         
   )
