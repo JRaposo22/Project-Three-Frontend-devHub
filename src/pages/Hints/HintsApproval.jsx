@@ -41,9 +41,9 @@ function HintsApproval() {
         <Link  to='/hints' className='go-to-hints'>Go to hints</Link>
         <div className='hint-flex-container'>
             <div>
-        {hints && hints.map((hint) => {
+        {hints.length && hints.map((hint) => {
             return (
-                !hint.approved &&(
+                hint.approved == false &&(
                     <>
                     <Hint hint={hint}   />
                     <button className='approval' onClick={() => approveHint(hint._id)}>Approve</button>

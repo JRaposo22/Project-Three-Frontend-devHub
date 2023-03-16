@@ -5,9 +5,11 @@ function Hint(props) {
     const{hint} = props;
   return (
     <div className='hint-flex-container'>
-      <h3>{hint.title}</h3>
-      <h4>{hint.category}</h4>
-      <p>{hint.description}</p>
+      <div className='box-hint'>
+        <h3>{hint.title}</h3>
+        <h4>{hint.category}</h4>
+        <p>{hint.description}</p>
+      </div>
     </div>
   )
 }
