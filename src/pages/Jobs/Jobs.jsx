@@ -36,9 +36,14 @@ function Jobs() {
 
   return (
     <section className='alljobs'>
-      <div>
-        <h1>Jobs</h1>
-     </div>
+    
+    <div className="title-edit-flex">
+    <h1 className="title-edit">Jobs</h1>
+    </div>
+        
+     
+   
+      
       <Link to='/jobs/add' className='linktoadd'> <p>Do you want to share? <span>Add a Job</span> </p> </Link>
         <div className='job-flex-container'>
           <div className='all-jobs-flex'>

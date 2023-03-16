@@ -69,3 +69,12 @@
     background: #ce666659;
     outline: none;
 }
+
+/* .title-edit h1:before {
+    background-color: rgb(225, 225, 69);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+} */

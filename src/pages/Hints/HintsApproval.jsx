@@ -35,7 +35,9 @@ function HintsApproval() {
 
   return (
     <section className='allhints'>
-        <h1>Hints</h1>
+        <div className="title-edit-flex">
+           <h1 className="title-edit">Approve Hints</h1>
+        </div>
         <Link  to='/hints' className='go-to-hints'>Go to hints</Link>
         <div className='hint-flex-container'>
             <div>

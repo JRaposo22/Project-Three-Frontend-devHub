@@ -85,7 +85,7 @@ function Navbar() {
             </div>
             <div className={`expand-jobs ${hiddenJob && 'hidden-app'}`}>
               <Link to="/jobs" className='expand-link' onClick={closeAndHidden}>Jobs</Link>
-              <Link to="/jobs-approval" className='expand-link' onClick={closeAndHidden}>Jobs Aproval</Link>
+              <Link to="/jobs-approval" className='expand-link' onClick={closeAndHidden}>Jobs Approval</Link>
             </div>
           </div>
           )}
@@ -103,7 +103,7 @@ function Navbar() {
             </div>
               <div className={`expand-hints ${hiddenHint && 'hidden-app'}`}>
                 <Link to="/hints" className='expand-link' onClick={closeAndHidden}>Hints</Link>
-                <Link to="/hints-approval" className='expand-link' onClick={closeAndHidden}>Hints Aproval</Link>
+                <Link to="/hints-approval" className='expand-link' onClick={closeAndHidden}>Hints Approval</Link>
               </div>
             </>
             
