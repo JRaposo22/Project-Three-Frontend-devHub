@@ -73,8 +73,9 @@ function EditProfile() {
                     <img src={image} alt="" /> 
                     <input type="file" name="image" id="image" onChange={handleImage}/>
                 
-                    <label htmlFor="username">Change username:</label>
+                    <label htmlFor="username">Username:</label>
                     <input type="text" name="username" id="username" value={username} onChange={handleUsername}/>
+                    <hr />
                     
                     <button type="submit">Edit Profile</button>
                 </div>

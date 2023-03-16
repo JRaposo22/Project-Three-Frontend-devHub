@@ -1,14 +1,18 @@
-import React, {useState} from 'react';
+import React, {useEffect, useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import jobService from '../../services/job.service';
+import { AuthContext } from '../../context/auth.context';
 
 
 function AddJob() {
+const { user } = useContext(AuthContext);
+
 const [title, setTitle] = useState("");
 const [company, setCompany] = useState("");
 const [description, setDescription] = useState("");
 const [image, setImage] = useState("");
 const [category, setCategory] = useState("");
+const [createdBy, setCreatedBy] = useState("");
 
 const handleTitle = (e) => setTitle(e.target.value);
 const handleCompany = (e) => setCompany(e.target.value);
@@ -20,7 +24,7 @@ const navigate = useNavigate();
 
 const handleSubmit = async (e) => {
     e.preventDefault();
-    const body = {title, company, description, image, category};
+    const body = {title, company, description, image, category, createdBy};
     try {
         await jobService.createJob(body);
         navigate("/jobs");
@@ -28,6 +32,10 @@ const handleSubmit = async (e) => {
         console.log(error);
     }
 }
+
+useEffect(() => {
+    setCreatedBy(user._id);
+}, []);
 
     return (
     <div>

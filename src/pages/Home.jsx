@@ -34,20 +34,24 @@ function Home() {
       <img className='background-image-home' src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678912808/background-img_s0slfp.jpg" alt="" />
       <div className='home-information'>
         <div className='home-container'>
-        <Link to="/jobs" className='link-home-information'>Jobs</Link>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dicta omnis ad itaque similique earum ipsa incidunt eos, provident accusantium. Necessitatibus consequuntur dolorem veritatis ab nulla fugiat quia voluptate quae!</p>
+          <Link to="/jobs" className='link-home-information'>Jobs</Link>
+          <hr className='hr-line'/>
+          <p>Find and share job opportunities.</p>
         </div>
         <div className='home-container'>
           <Link to="/hints" className='link-home-information'>Hints</Link>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam similique odio facere iure debitis, voluptatum placeat, aliquid veniam ut temporibus quo voluptates repellendus eveniet ducimus incidunt eum asperiores officia quaerat.</p>
+          <hr className='hr-line'/>
+          <p>Discover some tips for your development and also share.</p>
         </div>
         <div className='home-container'>
           <Link to="/quiz" className='link-home-information'>Quiz</Link>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi accusamus odit fuga magnam exercitationem ab enim dicta commodi ipsum! Ex quibusdam cupiditate doloribus aliquam pariatur commodi asperiores et deserunt quo.</p>
+          <hr className='hr-line'/>
+          <p>Test your knowledge with a quiz.</p>
         </div>
         <div className='home-container'>
           <Link to="/chat" className='link-home-information'>Chat</Link>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum cum veritatis possimus rerum hic consequuntur libero dignissimos facilis et corrupti. Natus blanditiis ipsam nostrum architecto est. Autem atque placeat iure!</p>
+          <hr className='hr-line'/>
+          <p>Talk with your developer's community.</p>
         </div>
       </div>
     </div>

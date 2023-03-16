@@ -67,10 +67,12 @@ body {
 
   .home-information {
     display: flex;
+    flex-wrap: wrap;
     margin: 8vw 0 0 0;
     padding: 2vw 8vw;
+    height: 170px;
     color: white;
-    background: rgba(105, 104, 104, 0.341);
+    background: rgba(105, 104, 104, 0.152);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.6px);
@@ -80,7 +82,12 @@ body {
 
   .home-container {
     margin: 30px;
+    flex-basis: 19%;
+    transition: 0.3s;
+  }
 
+  .home-container:hover { 
+    font-size: 120%;
   }
 
   .home-container h3, p {
@@ -92,7 +99,7 @@ body {
     background-color: rgba(33, 32, 32, 0);
     text-decoration: none;
     text-transform: uppercase;
-    margin-left: 10px;
+    margin-left: 10px; 
   }
 
   .style-both {
@@ -103,4 +110,9 @@ body {
     position: absolute;
     z-index: -1;
     width: 100%;
+  }
+
+  .hr-line {
+    border: 1px solid rgb(225, 225, 69);
+    width: 200px;
   }
