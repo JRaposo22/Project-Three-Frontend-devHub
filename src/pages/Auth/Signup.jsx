@@ -72,7 +72,7 @@ function Signup() {
                 <input type="password" placeholder='Password' name="password" id="password" value={password} onChange={handlePassword}/>
                 <hr />
                 <label htmlFor="adminPass"></label>
-                <input type="adminPass" placeholder='Admin Password' name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
+                <input type="password" placeholder='Admin Password' name="adminPass" id="adminPass" value={adminPass} onChange={handleAdminPass}/>
                 <hr />
                 <h3>{error}</h3>
                 <button type="submit" className='signupform-box-button'>Create account</button>
