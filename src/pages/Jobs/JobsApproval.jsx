@@ -49,9 +49,9 @@ function JobsApproval() {
 
   return (
     <section className='alljobs'>
-      <div className='title-edit'>
+      
         <h1>Jobs to approve</h1>
-      </div>
+     
         <div className='job-flex-container'>
           <div className='all-jobs-flex'>
         {jobs && jobs.map((job) => {

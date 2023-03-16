@@ -65,9 +65,9 @@ const deleteJob = async () => {
     <div>
         <form className='flex-edit-job' onSubmit={handleSubmit}>
             <div className='job-edit-box'>
-                <div className='title-edit'>
+              
                     	<h1>Edit Job</h1>
-                </div>
+               
 
                 <label htmlFor="title">Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>

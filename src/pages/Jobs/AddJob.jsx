@@ -47,13 +47,13 @@ useEffect(() => {
 
         <form className='flex-add-job' onSubmit={handleSubmit}>
             <div className='job-box'>
-            <div className='title-edit'>
+            
                 <h1>Add Job</h1>
-            </div>
+           
             
             <label htmlFor="title">Title</label>
             <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
-            teste \n. teste
+
             <label htmlFor="company">Company</label>
             <input type="text" name="company" id="company" value={company} onChange={handleCompany}/>
 
