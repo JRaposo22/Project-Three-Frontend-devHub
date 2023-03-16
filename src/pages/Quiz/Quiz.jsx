@@ -30,6 +30,7 @@ function Quiz() {
 
   return (
     <div className="quizes-container">
+    <img className="quiz-bg-image" src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1679006122/devHub/quiz_background_rxxyie.jpg" alt="" />
       <div className="quiz-general-title">
         <h1 className='cursor'><span className="auto-type"></span> <span className='h1-title'>Quiz</span> </h1>
       </div>

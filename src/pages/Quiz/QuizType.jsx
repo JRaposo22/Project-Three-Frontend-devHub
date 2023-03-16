@@ -66,7 +66,7 @@ function QuizType() {
 
   return (
     <div className="quiz">
-    <img className="quiz-bg-image" src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1678911591/cloudinary_test/MERN-part-1_gxc7vv.png" alt="" /> 
+    <img className="quiz-bg-image" src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1679006122/devHub/quiz_background_rxxyie.jpg" alt="" /> 
         <h1 className="quiz-title title-edit">{type} Quiz</h1>
          {(quiz.length > 0) && !quizEnd && (
             <>

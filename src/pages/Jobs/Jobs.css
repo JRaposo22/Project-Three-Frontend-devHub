@@ -1,5 +1,11 @@
+.jobs-background{
+    position:absolute;
+    width:100vw;
+    z-index:-1;
+}
+
 .alljobs {
-    margin: 50px;
+    margin:0 50px 50px;
 }
 
 .all-jobs-flex{
@@ -75,10 +81,17 @@
 
 .details-job {
     color: white;
-    border:1px solid gray;
     margin-bottom:30px;
     min-height: 600px;
     width: 600px;
+    color: white;
+    background: rgba(105, 104, 104, 0.152);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(105, 104, 104, 0.118);
+    padding:20px;
 }
 
 .details-job h3 {
@@ -151,7 +164,7 @@
 .title-edit-flex{
     display:flex;
     justify-content: center;
-    margin:80px 0 40px;
+    margin:0px 0 40px;
 }
 
 /* .title-edit h1:before {

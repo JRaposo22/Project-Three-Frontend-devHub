@@ -36,6 +36,7 @@ const ChatBox = () => {
 
   return (
     <main className="chat-box">
+    {/* <img className="chat-bg-image" src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1679006330/devHub/chat_background_ew3tfm.png" alt="" /> */}
       <div className="messages-wrapper">
         {messages?.map((message) => (
           <Message key={message.id} message={message} />

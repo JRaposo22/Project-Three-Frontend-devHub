@@ -35,6 +35,7 @@ function HintsApproval() {
 
   return (
     <section className='allhints'>
+    <img className="hints-background" src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1679005502/devHub/hints_background_phyafs.jpg" alt="" />
         <div className="title-edit-flex">
            <h1 className="title-edit">Approve Hints</h1>
         </div>

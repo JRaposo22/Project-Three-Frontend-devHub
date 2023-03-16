@@ -41,7 +41,7 @@ function Profile() {
           <div className="flex-profile">
             <img src={userProfile.imageUrl} alt="" />
             <h2>{userProfile.username}</h2>
-            <h3>{userProfile.email}</h3>
+            <h3 style={{padding:"10px"}}>✉️ {userProfile.email}</h3>
             <Link className="profile-edit-link" to={`/edit-profile/${id}`}>
               Edit profile
             </Link>

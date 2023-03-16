@@ -1,10 +1,29 @@
+.hints-background{
+    position:absolute;
+    height:200vh;
+    width:98vw;
+    z-index:-1;
+}
+
 .hint-flex-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 20px;
+    
 }
+
+/* .hints-card{
+    border: none;
+    
+    background: rgba(105, 104, 104, 0.341);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(105, 104, 104, 0.118);
+} */
 
 .hint-flex-container h3 {
     color: white;

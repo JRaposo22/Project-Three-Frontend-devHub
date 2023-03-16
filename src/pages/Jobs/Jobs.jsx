@@ -36,7 +36,7 @@ function Jobs() {
 
   return (
     <section className='alljobs'>
-    
+    <img className="jobs-background" src="https://res.cloudinary.com/dkoe4o8w1/image/upload/v1679004569/devHub/jobs_background_i0hrk0.jpg" alt="" />
     <div className="title-edit-flex">
     <h1 className="title-edit">Jobs</h1>
     </div>
