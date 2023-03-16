@@ -60,19 +60,20 @@ function Navbar() {
         <>
           {(!user.admin) ? (
           <div className='flex-icon'>
-            <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>            <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
+            <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>            
+            <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
           </div>
           ) : (
             <>
             <div className='flex-icon'>
               <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>
               <button className='link-sidenav link-items' onClick={hiddenJob}>Jobs+</button>
-              </div>
-              <div className='expand-jobs hidden-app'>
-                <Link to="/jobs" className='expand-link' onClick={close}>Jobs</Link>
-                <Link to="/jobs-approval" className='expand-link' onClick={close}>Jobs Aproval</Link>
-              </div>
-            </>
+            </div>
+            <div className='expand-jobs hidden-app'>
+              <Link to="/jobs" className='expand-link' onClick={close}>Jobs</Link>
+              <Link to="/jobs-approval" className='expand-link' onClick={close}>Jobs Aproval</Link>
+            </div>
+          </>
           )}
           
           {(!user.admin) ? (
@@ -82,13 +83,16 @@ function Navbar() {
             </div>
           ) : (
             <>
-            <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" /></button>
-            <button className='link-sidenav link-items' onClick={hiddenHint}>Hints+</button>
+            <div className='flex-icon'>
+              <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" /></button>
+              <button className='link-sidenav link-items' onClick={hiddenHint}>Hints+</button>
+            </div>
               <div className='expand-hints hidden-app'>
                 <Link to="/hints" className='expand-link' onClick={close}>Hints</Link>
                 <Link to="/hints-approval" className='expand-link' onClick={close}>Hints Aproval</Link>
               </div>
             </>
+            
           )}
           <div className='flex-icon'>
           <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902359/quiz-icon_axhtw9.png" alt="" /></button>

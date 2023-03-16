@@ -120,8 +120,15 @@
     font-size: 15px;
     color: white;
     display: block; 
-    transition: 0.3s;
     background-color: rgba(51, 51, 51);
+  }
+
+  .expand-hints {
+    transition: 0.3s;
+  }
+
+  .expand-jobs {
+    transition: height 0.3s;
   }
 
   .flex-icon {
