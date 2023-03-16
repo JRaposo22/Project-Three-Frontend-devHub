@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import userService from '../services/user.service';
-import { AuthContext } from '../context/auth.context';
-import '../pages/EditProfile.css';
+import userService from '../../services/user.service';
+import { AuthContext } from '../../context/auth.context';
+import './EditProfile.css';
 
 function EditProfile() {
     const { user, loggedIn, logout } = useContext(AuthContext);

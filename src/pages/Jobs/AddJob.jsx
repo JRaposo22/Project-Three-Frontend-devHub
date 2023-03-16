@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import jobService from '../services/job.service';
+import jobService from '../../services/job.service';
 
 
 function AddJob() {

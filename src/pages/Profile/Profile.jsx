@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { AuthContext } from '../context/auth.context';
+import { AuthContext } from '../../context/auth.context';
 import { Link, useParams } from 'react-router-dom';
-import userService from '../services/user.service';
+import userService from '../../services/user.service';
 import axios from 'axios';
-import '../pages/Profile.css';
+import './Profile.css';
 
 
 

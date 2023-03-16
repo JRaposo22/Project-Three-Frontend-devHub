@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import GoogleSigIn from '../components/GoogleSigIn';
-import '../pages/Signup.css';
+import GoogleSigIn from '../../components/GoogleSigIn';
+import './Signup.css';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import quizService from '../services/quiz.service';
+import quizService from '../../services/quiz.service';
 import './Quiz.css'
 
 function Quiz() {

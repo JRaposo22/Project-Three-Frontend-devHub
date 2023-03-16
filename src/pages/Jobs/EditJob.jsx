@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import jobService from '../services/job.service';
+import jobService from '../../services/job.service';
 
 function EditJob() {
 const [title, setTitle] = useState("");

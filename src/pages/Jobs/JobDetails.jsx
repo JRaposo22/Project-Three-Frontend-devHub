@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import jobService from '../services/job.service';
-import Job from '../components/Job';
-import '../pages/JobDetails.css';
+import jobService from '../../services/job.service';
+import Job from '../../components/Job';
+import './JobDetails.css';
 
 function JobDetails() {
     const [job, setJob] = useState(null);

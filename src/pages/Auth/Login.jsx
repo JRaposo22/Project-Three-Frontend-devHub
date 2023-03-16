@@ -1,9 +1,9 @@
 import React, {useState, useContext} from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
-import { AuthContext } from '../context/auth.context';
+import { AuthContext } from '../../context/auth.context';
 import { getAuth, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import '../pages/Login.css';
+import './Login.css';
 
 function Login() {
     

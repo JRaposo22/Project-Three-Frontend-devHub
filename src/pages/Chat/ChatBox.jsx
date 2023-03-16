@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   query,
   collection,
@@ -6,13 +6,14 @@ import {
   onSnapshot,
   limit,
 } from "firebase/firestore";
-import { db } from "../firebase";
-import Message from "../components/Message";
-import SendMessage from "../components/SendMessage";
+import { db } from "../../firebase";
+import Message from "../../components/Message";
+import SendMessage from "../../components/SendMessage";
 import './ChatBox.css'
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
+  const scroll = useRef();
   
   useEffect(() => {
     const q = query(
@@ -37,7 +38,8 @@ const ChatBox = () => {
           <Message key={message.id} message={message} />
         ))}
       </div>
-      <SendMessage />
+      <span ref={scroll}></span>
+      <SendMessage scroll={scroll}/>
     </main>
   );
 };

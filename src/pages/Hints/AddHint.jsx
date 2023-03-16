@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
-import hintService from '../services/hint.service';
+import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import hintService from '../../services/hint.service';
+
 
 function AddHint() {
     const [title, setTitle] = useState("");
@@ -14,48 +14,21 @@ function AddHint() {
 
     const navigate = useNavigate();
 
-    const { id } = useParams();
-
-    const getHint = async () => {
-        try {
-            const response = await hintService.hintDetails(id);
-            setTitle(response.data.hint.title);
-            setDescription(response.data.hint.description);
-            setCategory(response.data.hint.category);
-    
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const body = {title, description, category};
         try {
-            await axios.put(`${import.meta.env.VITE_API_URL}/api/hints/${id}`, body);
+            await hintService.createHint(body);
             navigate("/hints");
         } catch (error) {
             console.log(error);
         }
     }
-
-    useEffect(() => {
-        getHint();
-    }, []);
     
-// delete a hint
-const deleteHint = async () => {
-    try {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/api/hints/${id}`);
-        navigate('/hints');
-    } catch (error) {
-        console.log(error);
-    }
-}
 
   return (
     <div>
-        <h1>Edit Hint</h1>
+        <h1>Add Hint</h1>
 
         <form onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
@@ -67,9 +40,8 @@ const deleteHint = async () => {
             <label htmlFor="category">Category</label>
             <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
 
-            <button type="submit">Edit Hint</button>
+            <button type="submit">Add Hint</button>
         </form>
-        <button onClick={deleteHint}>Delete Hint</button>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import hintService from '../services/hint.service'
-import Hint from '../components/Hint';
-import '../pages/Hints.css';
+import hintService from '../../services/hint.service'
+import Hint from '../../components/Hint';
+import './Hints.css';
 
 
 function Hints() {
