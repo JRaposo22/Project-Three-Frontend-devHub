@@ -102,5 +102,5 @@ body {
   .background-image-home {
     position: absolute;
     z-index: -1;
-    height: 150vh;
+    width: 100%;
   }
