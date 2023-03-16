@@ -103,7 +103,7 @@
     font-size:1.2em;
 }
 
-.title-edit h1 {
+/* .title-edit h1 {
     font-size:26px; 
     font-weight:700;  
     color: white;
@@ -112,9 +112,9 @@
     width:160px; text-align:center; 
     margin:auto; white-space:nowrap; 
     padding-bottom:13px;
-}
+} */
 
-.title-edit h1:before {
+/* .title-edit h1:before {
       background-color: rgb(225, 225, 69);
       content: '';
       display: block;
@@ -131,4 +131,4 @@
     height: 3px;
     width: 75px;
     margin-bottom: 0.25em;
-}
+} */

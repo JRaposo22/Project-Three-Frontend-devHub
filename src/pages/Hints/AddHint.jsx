@@ -29,7 +29,9 @@ function AddHint() {
     <div>
       <form className="flex-add-hint" onSubmit={handleSubmit}>
         <div className='hint-box'>
-          <h1>Add Hint</h1>
+        <div className="title-edit-flex">
+           <h1 className="title-edit">Add Hint</h1>
+        </div>
 
           <label htmlFor="title">Title</label>
           <input

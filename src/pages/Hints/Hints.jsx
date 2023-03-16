@@ -27,7 +27,9 @@ function Hints() {
 
   return (
     <section className='allhints'>
-        <h1>Hints</h1>
+        <div className="title-edit-flex">
+           <h1 className="title-edit">Hints</h1>
+        </div>
         <Link to='/hints/add' className='linktoadd'><p>Do you want to share? <span>Add a Hint</span> </p></Link>
         <div className='hint-flex-container'>
             <div>

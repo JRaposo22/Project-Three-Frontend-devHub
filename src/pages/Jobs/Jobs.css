@@ -133,18 +133,28 @@
     text-decoration: none;
 }
 
-.title-edit h1 {
-    font-size:26px; 
+
+
+.title-edit {
+    border-top:2px solid yellow;
+    border-bottom:2px solid yellow;
+    display:inline-block;
+    font-size:50px; 
     font-weight:700;  
     color: white;
     letter-spacing:1px; 
     text-transform:uppercase; 
-    width:160px; text-align:center; 
-    margin:auto; white-space:nowrap; 
-    padding-bottom:13px;
+    white-space:nowrap; 
+    
 }
 
-.title-edit h1:before {
+.title-edit-flex{
+    display:flex;
+    justify-content: center;
+    margin:80px 0 40px;
+}
+
+/* .title-edit h1:before {
       background-color: rgb(225, 225, 69);
       content: '';
       display: block;
@@ -161,4 +171,4 @@
     height: 3px;
     width: 75px;
     margin-bottom: 0.25em;
-}
+} */

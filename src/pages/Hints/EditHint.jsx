@@ -59,7 +59,9 @@ const deleteHint = async () => {
     <div>
         <form className='flex-edit-hint' onSubmit={handleSubmit}>
             <div className='hint-edit-box'>
-                <h1>Edit Hint</h1>
+            <div className="title-edit-flex">
+                <h1 className="title-edit">Edit Hint</h1>
+            </div>
                 
                 <label htmlFor="title">Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>

@@ -45,6 +45,7 @@
   .closebutton {
     background-color: transparent;
     border: none;
+    display:none;
   }
   .closebutton img {
     padding: 0;
@@ -177,9 +178,7 @@
 
   
 
-  .button-flex{
-    
-  }
+ 
 
   .flex-image{
     width:10px;
