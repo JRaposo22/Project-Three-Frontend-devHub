@@ -44,16 +44,20 @@ function Jobs() {
         return (
           job.approved &&
             <div className='linkalljob'>
-              <button onClick={() => getJob(job._id)} key={job._id} className="link-decoration">
+              <button onClick={() => getJob(job._id)} key={job._id} className="job-button">
                 <h3>{job.title}</h3>
                 <h4>Company: {job.company}</h4>
               </button>
             </div>
         );
       })}
-          </div>
-          <Job job={job}/>
-          {job && user.admin == true && <Link to={`/jobs/edit/${job._id}`}>Edit job</Link>}  
+      </div>
+      <div>
+      <Job job={job}/>
+          {job && user.admin == true && <Link className="job-edit-button" to={`/jobs/edit/${job._id}`}>Edit job</Link>} 
+      </div>
+         
+            
           </div>
     </section>
   );

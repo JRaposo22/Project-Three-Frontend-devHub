@@ -24,9 +24,12 @@ const navigate = useNavigate();
 
 const handleSubmit = async (e) => {
     e.preventDefault();
+    /* setDescription(description.replace("\n", "<br>")); */
+    console.log(description)
     const body = {title, company, description, image, category, createdBy};
     try {
         await jobService.createJob(body);
+        console.log(description)
         navigate("/jobs");
     } catch (error) {
         console.log(error);
@@ -44,15 +47,13 @@ useEffect(() => {
         <form onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
             <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
-
+            teste \n. teste
             <label htmlFor="company">Company</label>
             <input type="text" name="company" id="company" value={company} onChange={handleCompany}/>
 
             <label htmlFor="description">Description</label>
-            <input type="text" name="description" id="description" value={description} onChange={handleDescription}/>
-
-            <label htmlFor="image">Image</label>
-            <input type="image" name="image" id="image" value={image} onChange={handleImage}/>
+            <textarea type="text" name="description" id="description" value={description} onChange={handleDescription}>{description} </textarea>
+            {/* <input type="text" name="description" id="description" value={description} onChange={handleDescription}/> */}
 
             <label htmlFor="category">Category</label>
             <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
