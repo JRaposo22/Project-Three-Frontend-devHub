@@ -15,6 +15,7 @@ const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
   
+  
   useEffect(() => {
     const q = query(
       collection(db, "messages"),
@@ -31,6 +32,8 @@ const ChatBox = () => {
     return () => unsubscribe;
   }, []);
 
+ 
+
   return (
     <main className="chat-box">
       <div className="messages-wrapper">
@@ -41,6 +44,7 @@ const ChatBox = () => {
       <span ref={scroll}></span>
       <SendMessage scroll={scroll}/>
     </main>
+    
   );
 };
 export default ChatBox;

@@ -11,8 +11,7 @@ function HintsApproval() {
     const getHints = async () => {
         try {
             const response = await hintService.getAllHints();
-            console.log(response.data);
-            setHints(response.data);
+            setHints(response.data.hints);
         } catch (error) {
             console.log(error);
         }
@@ -40,7 +39,7 @@ function HintsApproval() {
         <h1>Hints</h1>
         <div className='hint-flex-container'>
             <div>
-        {hints.map((hint) => {
+        {hints && hints.map((hint) => {
             return (
                 !hint.approved &&(
                     <>
