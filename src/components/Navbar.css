@@ -16,12 +16,12 @@
     background-color: rgba(51, 51, 51);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 120px;
   }
 
   .logout-flex {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
   }
 
   .link-sidenav {
@@ -55,8 +55,8 @@
     width: 1.5vw;
     margin: 0;
     position: absolute;
-    top: 10px;
-    left: 220px;
+    top: 2%;
+    right: 5%;
   }
 
   .openbutton {
@@ -166,4 +166,27 @@
 
   .image-user {
     border-radius: 50%;
+  }
+
+  .logo-image{
+    position:absolute;
+    top:2%;
+    left:6%;
+    width:60px;
+  }
+
+  
+
+  .button-flex{
+    
+  }
+
+  .flex-image{
+    width:10px;
+  }
+  .expand-arrow{
+    display:inline;
+    height:15px;
+    width:10px;
+    
   }
