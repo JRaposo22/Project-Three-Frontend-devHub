@@ -37,7 +37,7 @@ function Hints() {
                     <>
                 <Hint hint={hint}/>
                 {hint && user.admin == true && <Link className='edit-hint' to={`/hints/edit/${hint._id}`}>Edit Hint</Link>}
-                <hr />
+                <hr className='hr'/>
                 </>
                 )
             )

@@ -1,9 +1,9 @@
-.flex-edit-hint {
+.flex-edit-job {
     display: flex;
     flex-direction: column;
 }
 
-.hint-edit-box {
+.job-edit-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,7 @@
     margin: 20px;
 }
 
-.edit-hint-button {
+.edit-job-button {
     margin-top: 20px;
     padding: 10px 60px;
     border-radius: 10px;
@@ -26,14 +26,7 @@
     outline: none;
 }
 
-.hint-edit-box h1 {
-    font-size: 2vw;
-    color: white;
-    background-color: rgba(255, 255, 255, 0);
-    text-transform: uppercase;
-}
-
-.hint-edit-box input, textarea {
+.job-edit-box input, textarea {
     border: none;
     color: white;
     background-color: #262626;
@@ -44,11 +37,11 @@
     margin: 10px 20px;
 }
 
-.hint-edit-box label {
+.job-edit-box label {
     color: white;
 }
 
-.edit-hint {
+.edit-job-button {
     margin-top: 20px;
     padding: 10px 60px;
     border-radius: 10px;
@@ -65,7 +58,7 @@
     margin-top: 40px;
 }
 
-.delete-hint-button {
+.delete-job-button {
     margin-top: 20px;
     padding: 10px 60px;
     border-radius: 10px;
@@ -75,4 +68,13 @@
     font-weight: 500;
     background: #ce666659;
     outline: none;
+}
+
+.title-edit h1:before {
+    background-color: rgb(225, 225, 69);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
 }

@@ -2,6 +2,7 @@ import React, {useEffect, useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import jobService from '../../services/job.service';
 import { AuthContext } from '../../context/auth.context';
+import './AddJob.css';
 
 
 function AddJob() {
@@ -42,9 +43,14 @@ useEffect(() => {
 
     return (
     <div>
-        <h1>Add Job</h1>
+        
 
-        <form onSubmit={handleSubmit}>
+        <form className='flex-add-job' onSubmit={handleSubmit}>
+            <div className='job-box'>
+            <div className='title-edit'>
+                <h1>Add Job</h1>
+            </div>
+            
             <label htmlFor="title">Title</label>
             <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
             teste \n. teste
@@ -52,13 +58,21 @@ useEffect(() => {
             <input type="text" name="company" id="company" value={company} onChange={handleCompany}/>
 
             <label htmlFor="description">Description</label>
-            <textarea type="text" name="description" id="description" value={description} onChange={handleDescription}>{description} </textarea>
-            {/* <input type="text" name="description" id="description" value={description} onChange={handleDescription}/> */}
+            <textarea
+            type="text"
+            name="description"
+            id="description"
+            value={description}
+            onChange={handleDescription}
+          >
+            {description}{' '}
+          </textarea>
 
             <label htmlFor="category">Category</label>
             <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
 
             <button type="submit">Add Job</button>
+            </div>
         </form>
     </div>
   )

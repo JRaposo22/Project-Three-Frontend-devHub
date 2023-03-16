@@ -57,8 +57,6 @@ const deleteHint = async () => {
 
   return (
     <div>
-        
-
         <form className='flex-edit-hint' onSubmit={handleSubmit}>
             <div className='hint-edit-box'>
                 <h1>Edit Hint</h1>

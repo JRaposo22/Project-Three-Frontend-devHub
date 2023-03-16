@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import jobService from '../../services/job.service';
 import Job from '../../components/Job';
 import './Jobs.css';
+import { useNavigate } from 'react-router-dom';
 
 function JobsApproval() {
   const [jobs, setJobs] = useState([]);
   const [job, setJob] = useState(null);
+
+  const navigate = useNavigate();
 
   const getJobs = async () => {
     try {
@@ -33,8 +36,8 @@ function JobsApproval() {
       const response = await jobService.jobApprove(id);
       setJob(response.data.job);
       const responseJobs = await jobService.getAllJobs();
-      setJobs(responseJobs.data)
-      console.log(response)
+      setJobs(responseJobs.data.jobs);
+      navigate('/jobs-approval')
     } catch (error) {
         console.log(error);
     }
@@ -46,24 +49,29 @@ function JobsApproval() {
 
   return (
     <section className='alljobs'>
-      <h1>Jobs</h1>
+      <div className='title-edit'>
+        <h1>Jobs to approve</h1>
+      </div>
         <div className='job-flex-container'>
-          <div>
-        {jobs.map((job) => {
+          <div className='all-jobs-flex'>
+        {jobs && jobs.map((job) => {
         return (
-            
-          !job.approved &&(
-            <>
-            <Job job={job}/>
-          <button onClick={() => approveJob(job._id)}>Approve</button>
-            </>
-          )
-          
-         
+          job.approved == false &&
+            <div className='linkalljob'key={job._id}>
+              <button onClick={() => getJob(job._id)} className="job-button">
+                <h3>{job.title}</h3>
+                <h4>Company: {job.company}</h4>
+              </button>
+            </div>
         );
       })}
-          </div>
-              
+      </div>
+      <div>
+      <Job job={job}/>
+          {job && !job.approved && <button className="job-approve-button" onClick={() => approveJob(job._id)}>Approve</button>} 
+      </div>
+         
+            
           </div>
     </section>
   );

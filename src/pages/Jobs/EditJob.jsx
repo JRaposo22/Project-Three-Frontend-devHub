@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import jobService from '../../services/job.service';
+import './EditJob.css';
 
 function EditJob() {
 const [title, setTitle] = useState("");
@@ -62,27 +63,32 @@ const deleteJob = async () => {
 
     return (
     <div>
-        <h1>Edit Job</h1>
+        <form className='flex-edit-job' onSubmit={handleSubmit}>
+            <div className='job-edit-box'>
+                <div className='title-edit'>
+                    	<h1>Edit Job</h1>
+                </div>
 
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="title">Title</label>
-            <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
+                <label htmlFor="title">Title</label>
+                <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
 
-            <label htmlFor="company">Company</label>
-            <input type="text" name="company" id="company" value={company} onChange={handleCompany}/>
+                <label htmlFor="company">Company</label>
+                <input type="text" name="company" id="company" value={company} onChange={handleCompany}/>
 
-            <label htmlFor="description">Description</label>
-            <input type="text" name="description" id="description" value={description} onChange={handleDescription}/>
+                <label htmlFor="description">Description</label>
+                <input type="text" name="description" id="description" value={description} onChange={handleDescription}/>
 
-            <label htmlFor="image">Image</label>
-            <input type="image" name="image" id="image" value={image} onChange={handleImage}/>
+                <label htmlFor="image">Image</label>
+                <input type="image" name="image" id="image" value={image} onChange={handleImage}/>
 
-            <label htmlFor="category">Category</label>
-            <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
+                <label htmlFor="category">Category</label>
+                <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
 
-            <button type="submit">Edit Job</button>
+                <button className='edit-job-button' type="submit">Edit Job</button>
+                <button className='delete-job-button' onClick={deleteJob}>Delete Job</button>
+            </div>
         </form>
-        <button onClick={deleteJob}>Delete Job</button>
+        
     </div>
   )
 }

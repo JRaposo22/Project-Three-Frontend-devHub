@@ -6,12 +6,6 @@
     width:700px;
 }
 
-.alljobs h1 {
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-}
-
 .linktoadd {
     color: white;
     text-decoration: none;
@@ -27,10 +21,7 @@
 }
 
 .linkalljob {
-
     margin: 10px 0px 10px 250px;
-    
-    
 }
 
 
@@ -130,8 +121,7 @@
     display:block;
 }
 
-.job-edit-button{
-    
+.job-edit-button {
     padding: 10px 60px;
     border-radius: 10px;
     border: none;
@@ -141,4 +131,34 @@
     background: #e8e4e43b;
     outline: none;
     text-decoration: none;
+}
+
+.title-edit h1 {
+    font-size:26px; 
+    font-weight:700;  
+    color: white;
+    letter-spacing:1px; 
+    text-transform:uppercase; 
+    width:160px; text-align:center; 
+    margin:auto; white-space:nowrap; 
+    padding-bottom:13px;
+}
+
+.title-edit h1:before {
+      background-color: rgb(225, 225, 69);
+      content: '';
+      display: block;
+      height: 3px;
+      width: 75px;
+      margin-bottom: 5px;
+  }
+
+  .title-edit h1:after {
+    background-color: rgb(225, 225, 69);
+    content: '';
+    display: block;
+    position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
 }
