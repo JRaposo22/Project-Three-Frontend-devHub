@@ -4,6 +4,7 @@ import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Signup from './pages/auth/Signup';
 import Login from './pages/auth/Login';
 import Quiz from './pages/Quiz/Quiz';
@@ -28,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Footer />
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/signup' element={<Signup />}/>

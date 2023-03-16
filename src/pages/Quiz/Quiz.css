@@ -3,12 +3,14 @@
 }
 
 .quiz-links-flex{
-    background-color: grey;
+    background-color: rgba(105, 104, 104, 0.152);
     display:flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     min-height: 28vh;
+    margin-top: 100px;
+    padding: 0 60px;
 }
 
 .quizes-title{
@@ -16,23 +18,35 @@
     font-size:8em;
     margin:10vh 0 30vh;
 }
+
 .quiz-link-container{
     background-color: transparent;
-
 }
 
-.quiz-link-container p{
-
+.quiz-link-container p {
     background-color: transparent;
     color:white;
-    
-    
+    font-size: 15px;
 }
 
 .quiz-links{
-
     background-color: transparent;
     color:white;
     font-size:3em;
     text-decoration: none;
+}
+
+.auto-type {
+    color: white;
+    font-size: 80px;
+}
+
+.h1-title {
+    color: rgb(225, 225, 69);
+    font-size: 80px;
+}
+
+.cursor {
+    color: white;
+    font-size: 80px;
 }

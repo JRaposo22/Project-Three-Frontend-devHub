@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import '../components/Navbar.css';
@@ -6,6 +6,8 @@ import '../components/Navbar.css';
 
 function Navbar() {
     const { loggedIn, user, logout } = useContext(AuthContext);
+    const [hiddenJob, setHiddenJob] = useState(true);
+    const [hiddenHint, setHiddenHint] = useState(true);
 
     
     const open = function openNav() {
@@ -17,7 +19,8 @@ function Navbar() {
     }
 
     const closeAndHidden = function closeHidden() {
-      document.querySelector('.options').classList.toggle('hidden-options');
+      setHiddenHint(true);
+      setHiddenJob(true);
     }
 
     const closeAndLogout = function closeLogout() {
@@ -25,12 +28,12 @@ function Navbar() {
       logout();
     }
 
-    const hiddenJob = function hiddenApp() {
-      document.querySelector('.expand-jobs').classList.toggle('hidden-app');
+    const hideJob = function hiddenApp() {
+      setHiddenJob(!hiddenJob);
     }
 
-    const hiddenHint = function hiddenApp2() {
-      document.querySelector('.expand-hints').classList.toggle('hidden-app');
+    const hideHint = function hiddenApp2() {
+      setHiddenHint(!hiddenHint);
     }
 
   return (
@@ -64,16 +67,16 @@ function Navbar() {
             <Link to="/jobs" className='link-sidenav' onClick={close}>Jobs</Link>
           </div>
           ) : (
-            <>
+            <div className='flex-block'>
             <div className='flex-icon'>
               <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>
-              <button className='link-sidenav link-items' onClick={hiddenJob}>Jobs+</button>
+              <button className='link-sidenav link-items' onClick={hideJob}>Jobs+</button>
             </div>
-            <div className='expand-jobs hidden-app'>
-              <Link to="/jobs" className='expand-link' onClick={close}>Jobs</Link>
-              <Link to="/jobs-approval" className='expand-link' onClick={close}>Jobs Aproval</Link>
+            <div className={`expand-jobs ${hiddenJob && 'hidden-app'}`}>
+              <Link to="/jobs" className='expand-link' onClick={closeAndHidden}>Jobs</Link>
+              <Link to="/jobs-approval" className='expand-link' onClick={closeAndHidden}>Jobs Aproval</Link>
             </div>
-          </>
+          </div>
           )}
           
           {(!user.admin) ? (
@@ -85,11 +88,11 @@ function Navbar() {
             <>
             <div className='flex-icon'>
               <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" /></button>
-              <button className='link-sidenav link-items' onClick={hiddenHint}>Hints+</button>
+              <button className='link-sidenav link-items' onClick={hideHint}>Hints+</button>
             </div>
-              <div className='expand-hints hidden-app'>
-                <Link to="/hints" className='expand-link' onClick={close}>Hints</Link>
-                <Link to="/hints-approval" className='expand-link' onClick={close}>Hints Aproval</Link>
+              <div className={`expand-hints ${hiddenHint && 'hidden-app'}`}>
+                <Link to="/hints" className='expand-link' onClick={closeAndHidden}>Hints</Link>
+                <Link to="/hints-approval" className='expand-link' onClick={closeAndHidden}>Hints Aproval</Link>
               </div>
             </>
             
