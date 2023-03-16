@@ -1,0 +1,49 @@
+.flex-add-hint {
+    display: flex;
+    flex-direction: column;
+}
+
+.hint-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: transparent;
+    border: none;
+    margin: 20px;
+}
+
+.hint-box button {
+    margin-top: 20px;
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    background: #e8e4e43b;
+    outline: none;
+}
+
+.hint-box h1 {
+    font-size: 2vw;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+}
+
+.hint-box input, textarea {
+    border: none;
+    color: white;
+    background-color: #262626;
+    padding: 20px 20px 5px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+
+.hint-box label {
+    color: white;
+}

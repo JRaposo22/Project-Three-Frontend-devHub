@@ -1,0 +1,72 @@
+.hint-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.hint-flex-container h3 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.hint-flex-container h4 {
+    color: white;
+    text-align: center;
+    margin: 5px;
+}
+
+.hint-flex-container p {
+    color: white;
+    text-align: center;
+    font-size: 13px;
+}
+ 
+
+
+/* File Hints.jsx */
+
+.allhints h1 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 100px;
+}
+.linktoadd {
+    color: white;
+    text-decoration: none;
+}
+
+.linktoadd p {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.linktoadd span {
+    text-decoration: underline;
+}
+
+.edit-hint {
+    color: white;
+    font-size: 10px;
+}
+
+.approval {
+        margin: 20px 0;
+        padding: 10px 60px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-weight: 500;
+        background: #e8e4e43b;
+        outline: none;
+}
+
+.go-to-hints {
+    margin-left: 80%;
+    color: white;
+}

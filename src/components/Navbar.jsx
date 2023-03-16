@@ -21,10 +21,11 @@ function Navbar() {
     const closeAndHidden = function closeHidden() {
       setHiddenHint(true);
       setHiddenJob(true);
+      document.getElementById("mySidenav").style.width = "75px";
     }
 
     const closeAndLogout = function closeLogout() {
-      document.getElementById("mySidenav").style.width = "50px";
+      document.getElementById("mySidenav").style.width = "75px";
       logout();
     }
 
@@ -70,7 +71,7 @@ function Navbar() {
             <div className='flex-block'>
             <div className='flex-icon'>
               <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>
-              <button className='link-sidenav link-items' onClick={hideJob}>Jobs+</button>
+              <button className='link-sidenav link-items' onClick={hideJob}>Jobs</button>
             </div>
             <div className={`expand-jobs ${hiddenJob && 'hidden-app'}`}>
               <Link to="/jobs" className='expand-link' onClick={closeAndHidden}>Jobs</Link>
@@ -88,7 +89,7 @@ function Navbar() {
             <>
             <div className='flex-icon'>
               <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" /></button>
-              <button className='link-sidenav link-items' onClick={hideHint}>Hints+</button>
+              <button className='link-sidenav link-items' onClick={hideHint}>Hints</button>
             </div>
               <div className={`expand-hints ${hiddenHint && 'hidden-app'}`}>
                 <Link to="/hints" className='expand-link' onClick={closeAndHidden}>Hints</Link>

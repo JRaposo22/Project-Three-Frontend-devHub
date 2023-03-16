@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import hintService from '../../services/hint.service'
 import Hint from '../../components/Hint';
-import './Hints.css';
 
 
 function HintsApproval() {
@@ -37,6 +36,7 @@ function HintsApproval() {
   return (
     <section className='allhints'>
         <h1>Hints</h1>
+        <Link  to='/hints' className='go-to-hints'>Go to hints</Link>
         <div className='hint-flex-container'>
             <div>
         {hints && hints.map((hint) => {
@@ -44,7 +44,8 @@ function HintsApproval() {
                 !hint.approved &&(
                     <>
                     <Hint hint={hint}   />
-                    <button onClick={() => approveHint(hint._id)}>Approve</button>
+                    <button className='approval' onClick={() => approveHint(hint._id)}>Approve</button>
+                    <hr />
                     </>
                 )
             )

@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
+import '../components/Hint.css';
 
 function Hint(props) {
     const{hint} = props;
   return (
-    <div>
-    <h3>{hint.title}</h3>
-    <h4>{hint.category}</h4>
-    <p>{hint.description}</p>
+    <div className='hint-flex-container'>
+      <h3>{hint.title}</h3>
+      <h4>{hint.category}</h4>
+      <p>{hint.description}</p>
     </div>
   )
 }
 
-export default Hint
+export default Hint;

@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import hintService from '../../services/hint.service';
+import './EditHint.css';
+
 
 function AddHint() {
     const [title, setTitle] = useState("");
@@ -55,21 +57,26 @@ const deleteHint = async () => {
 
   return (
     <div>
-        <h1>Edit Hint</h1>
+        
 
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="title">Title</label>
-            <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
+        <form className='flex-edit-hint' onSubmit={handleSubmit}>
+            <div className='hint-edit-box'>
+                <h1>Edit Hint</h1>
+                
+                <label htmlFor="title">Title</label>
+                <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
 
-            <label htmlFor="description">Description</label>
-            <input type="text" name="description" id="description" value={description} onChange={handleDescription}/>
+                <label htmlFor="description">Description</label>
+                <textarea type="text" name="description" id="description" value={description} onChange={handleDescription}>{description} </textarea>
 
-            <label htmlFor="category">Category</label>
-            <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
+                <label htmlFor="category">Category</label>
+                <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
 
-            <button type="submit">Edit Hint</button>
+                <button className='edit-hint-button' type="submit">Edit Hint</button>
+                <button className='delete-hint-button' onClick={deleteHint}>Delete Hint</button>
+
+            </div>
         </form>
-        <button onClick={deleteHint}>Delete Hint</button>
     </div>
   )
 }

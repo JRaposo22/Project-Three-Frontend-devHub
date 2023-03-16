@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import hintService from '../../services/hint.service'
 import Hint from '../../components/Hint';
-import './Hints.css';
 
 
 function Hints() {
@@ -37,7 +36,8 @@ function Hints() {
                 hint.approved && (
                     <>
                 <Hint hint={hint}/>
-                {hint && user.admin == true && <Link to={`/hints/edit/${hint._id}`}>Edit Hint</Link>}
+                {hint && user.admin == true && <Link className='edit-hint' to={`/hints/edit/${hint._id}`}>Edit Hint</Link>}
+                <hr />
                 </>
                 )
             )
