@@ -69,9 +69,10 @@ function EditProfile() {
                     <label htmlFor="image"></label>
                     <img src={image} alt="" /> 
                     <input type="file" name="image" id="image" onChange={handleImage}/>
-                
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" name="username" id="username" value={username} onChange={handleUsername}/>
+                    <div className='input-flex'>
+                        <label htmlFor="username">Username:</label>
+                        <input type="text" name="username" id="username" value={username} onChange={handleUsername}/>
+                    </div>
                     <hr />
                     
                     <button type="submit">Edit Profile</button>

@@ -66,11 +66,11 @@ const deleteHint = async () => {
                 <label htmlFor="title">Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
 
-                <label htmlFor="description">Description</label>
-                <textarea type="text" name="description" id="description" value={description} onChange={handleDescription}>{description} </textarea>
-
                 <label htmlFor="category">Category</label>
                 <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>
+
+                <label htmlFor="description">Description</label>
+                <textarea type="text" name="description" id="description" value={description} onChange={handleDescription}>{description} </textarea>
 
                 <button className='edit-hint-button' type="submit">Edit Hint</button>
                 <button className='delete-hint-button' onClick={deleteHint}>Delete Hint</button>

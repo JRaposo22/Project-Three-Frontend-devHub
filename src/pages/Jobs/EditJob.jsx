@@ -41,7 +41,7 @@ const handleSubmit = async (e) => {
     const body = {title, company, description, image, category};
     try {
         await axios.put(`${import.meta.env.VITE_API_URL}/api/jobs/${id}`, body);
-        navigate(`/jobs/${id}`);
+        navigate(`/jobs`);
     } catch (error) {
         console.log(error);
     }
@@ -77,9 +77,6 @@ const deleteJob = async () => {
 
                 <label htmlFor="description">Description</label>
                 <input type="text" name="description" id="description" value={description} onChange={handleDescription}/>
-
-                <label htmlFor="image">Image</label>
-                <input type="image" name="image" id="image" value={image} onChange={handleImage}/>
 
                 <label htmlFor="category">Category</label>
                 <input type="text" name="category" id="category" value={category} onChange={handleCategory}/>

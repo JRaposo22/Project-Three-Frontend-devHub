@@ -26,12 +26,18 @@
 
 .profileform-box input {
     border: none;
-    padding: 20px 20px 5px 20px;
+    padding: 20px;
     font-size: 14px;
     border: none;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(68, 65, 65, 0);
     margin: 10px;
     color: white;
+}
+
+.input-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profileform-box label {

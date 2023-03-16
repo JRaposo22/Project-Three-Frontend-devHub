@@ -32,19 +32,17 @@ function Hints() {
         </div>
         <Link to='/hints/add' className='linktoadd'><p>Do you want to share? <span>Add a Hint</span> </p></Link>
         <div className='hint-flex-container'>
-            <div>
         {hints.map((hint) => {
             return (
                 hint.approved && (
                     <>
                 <Hint hint={hint}/>
                 {hint && user.admin == true && <Link className='edit-hint' to={`/hints/edit/${hint._id}`}>Edit Hint</Link>}
-                <hr className='hr'/>
+                <hr className='hr-hint'/>
                 </>
                 )
             )
         })}
-            </div>
         </div>
     </section>
   )
