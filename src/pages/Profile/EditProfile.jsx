@@ -31,11 +31,8 @@ function EditProfile() {
         } catch (error) {
             console.log(error);
         }
-
-
     
     }
-
 
     const getUserProfile = async () => {
         try {
