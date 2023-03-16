@@ -30,7 +30,7 @@ function Quiz() {
 
   return (
     <div className="quizes-container">
-      <div>
+      <div className="quiz-general-title">
         <h1 className='cursor'><span className="auto-type"></span> <span className='h1-title'>Quiz</span> </h1>
       </div>
      
