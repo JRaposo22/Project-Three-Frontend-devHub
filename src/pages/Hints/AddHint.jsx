@@ -3,17 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import hintService from '../../services/hint.service';
 import './AddHint.css';
 
+//Add hint page
 function AddHint() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
 
+  //Handler functions
   const handleTitle = (e) => setTitle(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
   const handleCategory = (e) => setCategory(e.target.value);
 
   const navigate = useNavigate();
 
+  //Handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     const body = { title, description, category };

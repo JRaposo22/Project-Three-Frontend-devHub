@@ -4,12 +4,13 @@ import axios from 'axios';
 import hintService from '../../services/hint.service';
 import './EditHint.css';
 
-
-function AddHint() {
+//Edit hint function
+function EditHint() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
 
+    //Handler functions
     const handleTitle = (e) => setTitle(e.target.value);
     const handleDescription = (e) => setDescription(e.target.value);
     const handleCategory = (e) => setCategory(e.target.value);
@@ -18,6 +19,7 @@ function AddHint() {
 
     const { id } = useParams();
 
+    //Get specific hint
     const getHint = async () => {
         try {
             const response = await hintService.hintDetails(id);
@@ -30,6 +32,7 @@ function AddHint() {
         }
     }
 
+    //Handle submit
     const handleSubmit = async (e) => {
         e.preventDefault();
         const body = {title, description, category};
@@ -41,11 +44,12 @@ function AddHint() {
         }
     }
 
+    //Get hint
     useEffect(() => {
         getHint();
     }, []);
     
-// delete a hint
+//Delete a hint
 const deleteHint = async () => {
     try {
         await axios.delete(`${import.meta.env.VITE_API_URL}/api/hints/${id}`);
@@ -81,4 +85,4 @@ const deleteHint = async () => {
   )
 }
 
-export default AddHint
+export default EditHint

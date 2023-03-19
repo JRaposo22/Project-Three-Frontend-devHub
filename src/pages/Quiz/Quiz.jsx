@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import quizService from '../../services/quiz.service';
 import './Quiz.css'
-import Typed from 'typed.js';
+import Typed from 'typed.js'; /* Gets the package for the typing animation */
 
 
 function Quiz() {
@@ -11,6 +11,7 @@ function Quiz() {
     // Create reference to store the DOM element containing the animation
     const el = React.useRef(null);
   
+    /* Config of the text to be animated */
     React.useEffect(() => {
       const typed = new Typed(".auto-type", {
         strings: ['General', 'JavaScript', 'CSS', 'HTML'],

@@ -5,32 +5,34 @@ import Job from '../../components/Job';
 import './Jobs.css';
 import { useNavigate } from 'react-router-dom';
 
+//Page for the approval of jobs
 function JobsApproval() {
   const [jobs, setJobs] = useState([]);
   const [job, setJob] = useState(null);
 
   const navigate = useNavigate();
 
+  //Get all jobs
   const getJobs = async () => {
     try {
       const response = await jobService.getAllJobs();
-      console.log(response.data);
       setJobs(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
+  //Get the specific job
   const getJob = async (id) => {
     try {
       const response = await jobService.jobDetails(id);
       setJob(response.data.job);
-      console.log(response.data.job)
     } catch (error) {
       console.log(error)
     }
   }
 
+  //Approve a job
   const approveJob = async (id) => {
     try {
       const response = await jobService.jobApprove(id);
@@ -43,6 +45,7 @@ function JobsApproval() {
     }
   }
 
+  //Fetch the jobs
   useEffect(() => {
     getJobs();
   }, []);
@@ -70,6 +73,7 @@ function JobsApproval() {
       })}
       </div>
       <div>
+      {/* Only shows jobs that are not approved */}
       <Job job={job}/>
           {job && !job.approved && <button className="job-approve-button" onClick={() => approveJob(job._id)}>Approve</button>} 
       </div>

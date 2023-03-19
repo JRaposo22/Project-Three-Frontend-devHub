@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import jobService from '../../services/job.service';
 import './EditJob.css';
 
+//Edit a job
 function EditJob() {
 const [title, setTitle] = useState("");
 const [company, setCompany] = useState("");
@@ -11,6 +12,7 @@ const [description, setDescription] = useState("");
 const [image, setImage] = useState("");
 const [category, setCategory] = useState("");
 
+//Handler functions
 const handleTitle = (e) => setTitle(e.target.value);
 const handleCompany = (e) => setCompany(e.target.value);
 const handleDescription = (e) => setDescription(e.target.value);
@@ -21,10 +23,11 @@ const navigate = useNavigate();
 
 const { id } = useParams();
 
+//Get the specific job
 const getJob = async () => {
     try {
         const response = await jobService.jobDetails(id);
-        console.log(response.data)
+        //Set all the job info in the useState variables
         setTitle(response.data.job.title);
         setCompany(response.data.job.company);
         setDescription(response.data.job.description);
@@ -36,6 +39,7 @@ const getJob = async () => {
     }
 }
 
+//Handle submit
 const handleSubmit = async (e) => {
     e.preventDefault();
     const body = {title, company, description, image, category};
@@ -47,11 +51,12 @@ const handleSubmit = async (e) => {
     }
 }
 
+//Fetch the specific job
 useEffect(() => {
     getJob();
 }, []);
 
-// delete a job
+//Delete the job
 const deleteJob = async () => {
     try {
         await axios.delete(`${import.meta.env.VITE_API_URL}/api/jobs/${id}`);
@@ -64,11 +69,9 @@ const deleteJob = async () => {
     return (
     <div>
         <form className='flex-edit-job' onSubmit={handleSubmit}>
-            <div className='job-edit-box'>
-              
+            <div className='job-edit-box'>   
                     	<h1>Edit Job</h1>
                
-
                 <label htmlFor="title">Title</label>
                 <input type="text" name="title" id="title" value={title} onChange={handleTitle}/>
 

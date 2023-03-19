@@ -15,17 +15,15 @@ function Signup() {
     const [adminPass, setAdminPass] = useState("");
     const [error, setError] = useState('');
 
+    //Handler Functions
     const handleUsername = (e) => setUsername(e.target.value);
     const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
     const handleAdminPass = (e) => setAdminPass(e.target.value);
     
-
-
     const navigate = useNavigate();
 
-    
-
+    //Handle submit
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -44,17 +42,12 @@ function Signup() {
             const errorMessage = error.message;
     // ..
   });
-
-  
-          
-  
             navigate('/login');
         } catch (error) {
             setError(error.response.data.message);
             console.log(error);
         }
     }
-
 
   return (
     <div>

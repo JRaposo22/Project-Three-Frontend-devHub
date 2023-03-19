@@ -4,7 +4,7 @@ import jobService from '../../services/job.service';
 import { AuthContext } from '../../context/auth.context';
 import './AddJob.css';
 
-
+//Add a job function
 function AddJob() {
 const { user } = useContext(AuthContext);
 
@@ -15,6 +15,7 @@ const [image, setImage] = useState("");
 const [category, setCategory] = useState("");
 const [createdBy, setCreatedBy] = useState("");
 
+//Handler functions
 const handleTitle = (e) => setTitle(e.target.value);
 const handleCompany = (e) => setCompany(e.target.value);
 const handleDescription = (e) => setDescription(e.target.value);
@@ -23,9 +24,9 @@ const handleCategory = (e) => setCategory(e.target.value);
 
 const navigate = useNavigate();
 
+//Handle ssubmit
 const handleSubmit = async (e) => {
     e.preventDefault();
-    /* setDescription(description.replace("\n", "<br>")); */
     console.log(description)
     const body = {title, company, description, image, category, createdBy};
     try {
@@ -37,6 +38,7 @@ const handleSubmit = async (e) => {
     }
 }
 
+//Sets the logged user ID as the createdBy
 useEffect(() => {
     setCreatedBy(user._id);
 }, []);

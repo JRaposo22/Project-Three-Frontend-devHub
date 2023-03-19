@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import hintService from '../../services/hint.service'
 import Hint from '../../components/Hint';
 
-
+//Get all hints function
 function Hints() {
     const [hints, setHints] = useState([]);
     const [hint, setHint] = useState(null);
     const [user, setUser] = useState(null);
 
+    //Get hints from backend
     const getHints = async () => {
         try {
             const response = await hintService.getAllHints();
-            console.log(response.data.hints);
             setHints(response.data.hints);
             setUser(response.data.user);
         } catch (error) {
@@ -20,6 +20,7 @@ function Hints() {
         }
     }
 
+    //Fetch hints
     useEffect(() => {
         getHints();
     }, []);

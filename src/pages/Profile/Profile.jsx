@@ -6,29 +6,29 @@ import jobService from '../../services/job.service';
 import axios from 'axios';
 import './Profile.css';
 
+//User's profile page
 function Profile() {
   const [userProfile, setUserProfile] = useState(null);
   const [jobs, setJobs] = useState([]);
   const { id } = useParams();
 
+  //Get the profile
   const getUserProfile = async () => {
     try {
       const response = await userService.getUser(id);
-      console.log('DAAAAAAATA', response.data);
       setUserProfile(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
+  //Get the jobs
   const getJobs = async () => {
     const response = await jobService.getAllJobs();
     setJobs(response.data);
-    console.log(response.data);
-    console.log(response.data.createdBy)
-    console.log(userProfile._id)
   };
 
+  //Fetch user info and jobs
   useEffect(() => {
     getUserProfile();
     getJobs();

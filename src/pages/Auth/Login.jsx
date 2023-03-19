@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/auth.context';
 import { getAuth, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import './Login.css';
 
+//Login page
 function Login() {
     
     const [email, setEmail] = useState("");
@@ -18,12 +19,16 @@ function Login() {
 
     const navigate = useNavigate();
 
+    //Handler function
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            //Sends login and pass to the backend
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, {email, password});
+            //Stores the loggin token in the local storage
             localStorage.setItem('authToken', response.data.authToken);
             authenticateUser();
+            //Login in the firebase
             const auth = getAuth();
             signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {

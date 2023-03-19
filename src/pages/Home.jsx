@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { AuthContext } from '../context/auth.context';
 import { auth } from "../firebase";
 
-
+//Home function
 function Home() {
   const [userAuth] = useAuthState(auth);
   console.log(userAuth);
@@ -22,7 +22,7 @@ function Home() {
         <span className="span6">b</span>
         <span className="span7">.</span>
       </div>
-
+      {/* Checks if there's a user logged in */}
       {loggedIn ? (
         <div className='style-both'>
           <h2>Hello, {user.username}.</h2>

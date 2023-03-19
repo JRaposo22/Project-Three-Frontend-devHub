@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import '../components/Navbar.css';
 
-
+//Navbar component
 function Navbar() {
     const { loggedIn, user, logout } = useContext(AuthContext);
     const [hiddenJob, setHiddenJob] = useState(true);
     const [hiddenHint, setHiddenHint] = useState(true);
 
-    
+    //Open side Navbar
     const open = function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("close-nav-button").style.display = "block"
     }
-    
+    //Close side Navbar
     const close = function closeNav() {
       document.getElementById("mySidenav").style.width = "75px";
       document.getElementById("close-nav-button").style.display = "none"
@@ -22,6 +22,7 @@ function Navbar() {
       setHiddenJob(true);
     }
 
+    //Close side Navbar and hides the jobs and hints expandable menu
     const closeAndHidden = function closeHidden() {
       setHiddenHint(true);
       setHiddenJob(true);
@@ -29,6 +30,7 @@ function Navbar() {
       document.getElementById("close-nav-button").style.display = "none"
     }
 
+    //Closes side Navbar and hides the jobs and hints expandable menu
     const closeAndLogout = function closeLogout() {
       document.getElementById("mySidenav").style.width = "75px";
       document.getElementById("close-nav-button").style.display = "none"
@@ -37,10 +39,12 @@ function Navbar() {
       logout();
     }
 
+    //Hide jobs expandable menu
     const hideJob = function hiddenApp() {
       setHiddenJob(!hiddenJob);
     }
 
+    //Hide hints expandable menu
     const hideHint = function hiddenApp2() {
       setHiddenHint(!hiddenHint);
     }
@@ -71,7 +75,7 @@ function Navbar() {
             <Link className='home-link link-sidenav' to="/" onClick={close}>Home</Link>
           </div>
         {loggedIn ? (
-        <>
+        <> {/*---------------- Only admins can see this options----------------- */}
           {(!user.admin) ? (
           <div className='flex-icon'>
             <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678901805/job-icon_emlrex.png" alt="" /></button>            
@@ -90,6 +94,7 @@ function Navbar() {
           </div>
           )}
           
+          {/*---------------- Options for normal users--------------- */}
           {(!user.admin) ? (
             <div className='flex-icon'>
               <button onClick={open}><img src="https://res.cloudinary.com/dwgakctdp/image/upload/v1678902162/hint-icon_pczegs.png" alt="" /></button>

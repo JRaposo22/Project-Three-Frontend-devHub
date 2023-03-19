@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import hintService from '../../services/hint.service'
 import Hint from '../../components/Hint';
 
-
+//Aprove a hint
 function HintsApproval() {
     const [hints, setHints] = useState([]);
 
+    //Get all the hints that are not approved
     const getHints = async () => {
         try {
             const response = await hintService.getAllHints();
@@ -16,18 +17,18 @@ function HintsApproval() {
         }
     }
 
+    //Approve the hint
     const approveHint = async (id) => {
         try {
           const response = await hintService.hintApprove(id);
-          //setHint(response.data.hint);
           const responseHints = await hintService.getAllHints();
           setHints(responseHints.data)
-          console.log(response)
         } catch (error) {
             console.log(error);
         }
       }
 
+      //Fetch all hints
     useEffect(() => {
         getHints();
     }, []);
@@ -42,6 +43,7 @@ function HintsApproval() {
         <Link  to='/hints' className='go-to-hints'>Go to hints</Link>
         <div className='hint-flex-container'>
             <div>
+            {/* only shows the hints that are not approved */}
         {hints.length && hints.map((hint) => {
             return (
                 hint.approved == false &&(

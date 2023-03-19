@@ -1,6 +1,7 @@
 import React from 'react';
 import '../components/Hint.css';
 
+//Hint component
 function Hint(props) {
     const{hint} = props;
   return (

@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import hintService from '../../services/hint.service';
 
-
+//Hint details function
 function HintDetails() {
     const [hint, setHint] = useState(null);
     const [user, setUser] = useState(null);
 
     const { id } = useParams();
 
+    //Get specific hint
     const getHint = async () => {
         try {
             const response = await hintService.hintDetails(id);
-            console.log(response.data);
             setHint(response.data.hint);
             setUser(response.data.user);
         } catch (error) {

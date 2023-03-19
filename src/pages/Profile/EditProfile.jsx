@@ -5,39 +5,38 @@ import userService from '../../services/user.service';
 import { AuthContext } from '../../context/auth.context';
 import './EditProfile.css';
 
+//Edit profile page
 function EditProfile() {
     const { user, loggedIn, logout } = useContext(AuthContext);
     const{id} = useParams();
 
     const [username, setUsername] = useState('');
     const [image, setImage] = useState('');
-    const formData = new FormData();
 
     const navigate = useNavigate();
 
+    //Handle username
     const handleUsername = (e) => setUsername(e.target.value);
 
+    //Handle image
     const handleImage = async (e) => {
+        //Create a new form data to put all the image info
         const uploadData = new FormData();
-
         uploadData.append('imageUrl', e.target.files[0]);
-
         try {
-
+            //Send the upload request to the backend
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/upload`, uploadData);
-            setImage(response.data.fileUrl);
-
-            
+            //The backend responds with the cloudinary image url
+            setImage(response.data.fileUrl);   
         } catch (error) {
             console.log(error);
         }
-    
     }
 
+    //Get the logged in user profile
     const getUserProfile = async () => {
         try {
             const response = await userService.getUser(id);
-            //console.log(response.data)
             setUsername(response.data.username);
             setImage(response.data.imageUrl);
         } catch (error) {
@@ -45,6 +44,7 @@ function EditProfile() {
         }
     }
 
+    //Handle submit
     const handleSubmit = async (e) => {
         e.preventDefault();
         const body = {username, imageUrl:image};
@@ -56,6 +56,7 @@ function EditProfile() {
         }
     }
 
+    //Fetch the user profile
     useEffect(() => {
         getUserProfile(id);
     }, []);
